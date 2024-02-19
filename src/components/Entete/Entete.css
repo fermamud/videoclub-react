@@ -1,0 +1,8 @@
+header {
+    background-color: var(--couleur-secundaire);
+    color: var(--couleur-neutre);
+
+    a {
+        color: var(--couleur-neutre);
+    }
+}

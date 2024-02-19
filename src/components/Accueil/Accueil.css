@@ -1,0 +1,7 @@
+body {
+    background-color: var(--couleur-primaire);
+
+    & h1 {
+        font-family: var(--police-titre);
+    }
+}
