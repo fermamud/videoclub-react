@@ -8,9 +8,9 @@ function ListeFilms() {
   // return <TuileFilm key={index} data={film}/>
 
   const listeFilms = [
-    { titre: 'Film 1', realisateur: 'Billy', annee: '2010' },
-    { titre: 'Film 2', realisateur: 'Billy', annee: '2011' },
-    { titre: 'Film 3', realisateur: 'Billy', annee: '2012' }
+    { id: 1,titre: 'Film 1', realisateur: 'Billy', annee: '2010' },
+    { id: 2,titre: 'Film 2', realisateur: 'Billy', annee: '2011' },
+    { id: 3,titre: 'Film 3', realisateur: 'Billy', annee: '2012' }
   ];
 
   const tuilesFilm = listeFilms.map((film, index) => {
