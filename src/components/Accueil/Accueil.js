@@ -9,7 +9,7 @@ function Accueil() {
 
   return (
     <main>
-      Accueil
+      Accueil teste
       {/* le contenu du fichier accueil.json import (com uma boucle). Colocar ele dentro do Accueil (fichier json) */}
       {dataAffichage}
     </main>

@@ -6,6 +6,11 @@
 // - Commencer votre CSS -> ok
 // - Route et composants 404 -> ok
 
+// À faire suite au cours 9
+// - Dynamiser la page d'un film (useParams, ref : https://reactrouter.com/en/main/hooks/use-params)
+// - Ajouter un séparateur entre les genres du tableau de genres d'un film
+// - Mise en page composants et interactivité
+
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Entete from '../Entete/Entete';
 import Accueil from '../Accueil/Accueil';
