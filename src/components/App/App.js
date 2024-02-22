@@ -7,7 +7,7 @@
 // - Route et composants 404 -> ok
 
 // À faire suite au cours 9
-// - Dynamiser la page d'un film (useParams, ref : https://reactrouter.com/en/main/hooks/use-params)
+// - Dynamiser la page d'un film (useParams, ref : https://reactrouter.com/en/main/hooks/use-params) -> ok
 // - Ajouter un séparateur entre les genres du tableau de genres d'un film
 // - Mise en page composants et interactivité
 

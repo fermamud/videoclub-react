@@ -26,14 +26,27 @@ function Film() {
             });
     }, []);
 
-    console.log(infoFilm);
+    const tableauGenres = infoFilm.genres || []; 
+    console.log(tableauGenres);
+    const genres = tableauGenres.join(', ');
+
+    const tableauNotes = infoFilm.notes || [];
+    const notes = tableauNotes.join(', ');
+
+    //console.log(infoFilm);
+    console.log(genres);
     return (
         <div>
             <p>{infoFilm.titre}</p>
             <p>{infoFilm.description}</p>
             <p>{infoFilm.realisation}</p>
             <p>{infoFilm.annee}</p>
-            <p>{infoFilm.genres}</p>
+            <p>
+                {genres}
+            </p>
+            <p>
+                {notes}
+            </p>
             {/* <img src={`/../img/${infoFilm.titreVignette}`} alt={infoFilm.titre} /> */}
             <img src={`/img/${infoFilm.titreVignette}`} alt={infoFilm.titre} />
 
