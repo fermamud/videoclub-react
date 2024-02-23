@@ -11,10 +11,33 @@
 // - Ajouter un séparateur entre les genres du tableau de genres d'un film
 // - Mise en page composants et interactivité
 
+// À faire suite au cours 10
+// - Les autres filtres (une seule fonction), soit :
+// 	- 'Titre alphabétique (A-Z)'
+// 	- 'Titre alphabétique (Z-A)'
+// 	- 'Réalisateur alphabétique (A-Z)'
+// 	- 'Réalisateur alphabétique (Z-A)'
+// 	- 'Par année (du plus récent)'
+// 	- 'Par année (du plus ancien)'
+
+// 	- Query string 
+// 		- orderBy
+// 			- titre
+// 			- realisation- annee
+
+// 		- orderDirection
+// 			- asc
+// 			- desc
+
+// - Créer un composant Filtre
+// - Afficher filtre actif
+// - Par défaut, la tuile d'un film affiche l'image et le titre du film, afficher le réalisateur ou l'année si cette information est filtré
+
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Entete from '../Entete/Entete';
 import Accueil from '../Accueil/Accueil';
 import ListeFilms from '../ListeFilms/ListeFilms';
+import Filtre from '../Filtre/Filtre';
 import Film from '../Film/Film';
 import Page404 from '../Page404/Page404';
 import './App.css';
