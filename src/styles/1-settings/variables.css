@@ -1,12 +1,26 @@
 :root {
-    /* Couleurs */
-    /* --couleur-primaire: #74a0ce; */
-    --couleur-secundaire: #3f4348;
-    --couleur-neutre: #efefef;
+  /* Couleurs */
+  /* --couleur-primaire: #74a0ce; */
+  /* --couleur-secundaire: #3f4348; */
+  --couleur-neutre: #d8dcde;
+  --couleur-basique: #ffffff;
 
-    /* Typographies */
-    --police-titre: Arial, Helvetica, sans-serif;
+  /* Typographies */
+  --police-titre: "Titre";
+  --police-texte: "Texte";
+  /* mudar os tamanhos */
+  --police-h1: 2rem;
+  --police-h2: 1.75rem;
+  --police-h3: 1.5rem;
+  --police-texte: 1.25rem;
+  --police-nav: max(2rem, 3vw);
 
-    /* Espaces */
-    --space-base: max(5px, 1vw)
+  /* Espaces */
+  --space-base: max(5px, 1vw);
+  /* ver se o exemplo do simon eh melhor ou nao */
+  --space-2: 2rem;
+  --space-2_5: 2.5rem;
+
+  /* Largeur */
+  --width-large: max(150px, 15vw);
 }

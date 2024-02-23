@@ -1,8 +1,60 @@
 header {
-    background-color: var(--couleur-secundaire);
-    color: var(--couleur-neutre);
+  background-image: linear-gradient(
+      135deg,
+      rgba(80, 37, 37, 0.939) 0%,
+      rgba(82, 72, 114, 0.572) 35%,
+      rgba(22, 23, 60, 0.737) 100%
+    ),
+    url("../../../public/img/banniere.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: end;
 
-    a {
-        color: var(--couleur-neutre);
+  & .logo-container {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-basis: 30%;
+    padding-bottom: var(--space-2);
+
+    & .logo {
+      opacity: 1;
+      max-width: var(--width-large);
     }
+  }
+
+  & nav {
+    flex-basis: 70%;
+    font-size: var(--police-nav);
+
+    & ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      padding-right: var(--space-2_5);
+      margin: 0;
+
+      & .active {
+        border-bottom: 3px solid var(--couleur-basique);
+      }
+
+      & li {
+        display: flex;
+        list-style: none;
+        padding: var(--space-2);
+
+        & img {
+          opacity: 0;
+        }
+
+        & a {
+          font-family: var(--police-titre);
+          color: var(--couleur-basique);
+          text-decoration: none;
+        }
+      }
+    }
+  }
 }

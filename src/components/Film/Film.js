@@ -11,7 +11,8 @@ function Film() {
     const filmId = useParams();
     console.log(filmId);
     
-    const urlFilm = `https://four1f-node-api.onrender.com/films/${filmId.id}`;
+    //const urlFilm = `https://four1f-node-api.onrender.com/films/${filmId.id}`;
+    const urlFilm = `https://demo-en-classe.onrender.com/api/films/${filmId.id}`;
     console.log(urlFilm);
     const [infoFilm, setInfoFilm] = useState([]);
 

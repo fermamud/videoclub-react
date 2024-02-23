@@ -1,0 +1,19 @@
+/* Typographie */
+
+/* @import url(fonts/IrishGrover-Regular.ttf);
+@import url(fonts/Lobster-Regular.ttf);
+@import url(fonts/RedHatDisplay-Regular.ttf); */
+
+/* Police titres */
+@font-face {
+  font-family: "Titre";
+  src: url("../../../public/fonts/IrishGrover-Regular.ttf");
+}
+
+/* Police textes */
+@font-face {
+  font-family: "Texte";
+  src: url("../../../public/fonts/RedHatDisplay-Regular.ttf");
+}
+
+/* APAGAR AS QUE NAO USO */
