@@ -16,11 +16,13 @@ function TuileFilm(props) {
   }
 
   return (
-    <article>
-      <img src={`img/${props.data.titreVignette}`} alt={props.data.titre} />
-      <h2>{props.data.titre}</h2>
-      {(tri === 'annee') ? <p>{props.data.annee}</p> : ''}
-      {(tri === 'realisation') ? <p>{props.data.realisation}</p> : ''}
+    <article className="container-image">
+      <img className="image" src={`img/${props.data.titreVignette}`} alt={props.data.titre} />
+      <div className="info-film">
+        <h2>{props.data.titre}</h2>
+        {(tri === 'annee') ? <p>{props.data.annee}</p> : ''}
+        {(tri === 'realisation') ? <p>{props.data.realisation}</p> : ''}
+      </div>
     </article>
   );
 }

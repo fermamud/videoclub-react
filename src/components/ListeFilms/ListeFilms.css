@@ -1,3 +1,93 @@
-.actif {
-  color: red;
+body {
+  background-color: var(--couleur-neutre);
+}
+
+.container-imgs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: var(--space-2) 0 var(--space-2) 0;
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
+
+  & .container-image {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 1rem;
+
+    & .image {
+      aspect-ratio: 0.2/0.25;
+      border-radius: 0;
+      width: var(--width-normal);
+    }
+
+    /* & .image:hover {
+      border-radius: 3rem;
+      aspect-ratio: 0.4/0.5;
+      width: var(--width-medium);
+    } */
+
+    & .info-film {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: max(15rem, 20vw);
+
+      h2 {
+        font-family: "Titre";
+        font-size: max(1.5rem, 1.2vw);
+      }
+
+      p {
+        font-family: "Texte";
+        font-size: max(1.3rem, 1vw);
+        margin: 0.5rem;
+      }
+    }
+  }
+}
+
+/* .container-imgs .container-image .image {
+  opacity: 1;
+  transition: width 1s ease, aspect-ratio 1s ease, border-radius 1s ease,
+    opacity 1s ease;
+}
+.container-imgs:hover .container-image .image {
+  opacity: 0.5;
+}
+
+.container-imgs .container-image:hover .image {
+  opacity: 1;
+} */
+
+.filtre {
+  display: flex;
+  font-family: "Texte";
+  font-size: max(1.3rem, 1.8vw);
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* justify-content: space-evenly; */
+    padding: 0;
+    width: 100%;
+
+    li {
+      list-style: none;
+      padding: 1.5rem;
+    }
+
+    li:hover {
+      background-color: var(--couleur-bg-blue-clair);
+      border: var(--couleur-bg-red) var(--space-0_25) solid;
+      color: white;
+    }
+  }
 }

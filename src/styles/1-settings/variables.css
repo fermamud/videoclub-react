@@ -4,10 +4,13 @@
   /* --couleur-secundaire: #3f4348; */
   --couleur-neutre: #d8dcde;
   --couleur-basique: #ffffff;
+  --couleur-bg-red: rgba(80, 37, 37, 0.939);
+  --couleur-bg-blue-clair: rgba(82, 72, 114, 0.572);
 
   /* Typographies */
   --police-titre: "Titre";
   --police-texte: "Texte";
+  
   /* mudar os tamanhos */
   --police-h1: 2rem;
   --police-h2: 1.75rem;
@@ -18,9 +21,14 @@
   /* Espaces */
   --space-base: max(5px, 1vw);
   /* ver se o exemplo do simon eh melhor ou nao */
+  
+  --space-0_25: 0.25rem;
   --space-2: 2rem;
   --space-2_5: 2.5rem;
 
-  /* Largeur */
-  --width-large: max(150px, 15vw);
+  /* Largeur images */
+  --width-xlarge: max(150px, 15vw);
+  --width-large: max(22rem, 15vw);
+  --width-medium: max(15rem, 22vw);
+  --width-normal: max(15rem, 20vw);
 }

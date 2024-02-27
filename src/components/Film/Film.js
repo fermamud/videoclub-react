@@ -37,21 +37,23 @@ function Film() {
     //console.log(infoFilm);
     console.log(genres);
     return (
-        <div>
-            <p>{infoFilm.titre}</p>
-            <p>{infoFilm.description}</p>
-            <p>{infoFilm.realisation}</p>
-            <p>{infoFilm.annee}</p>
-            <p>
-                {genres}
-            </p>
-            <p>
-                {notes}
-            </p>
-            {/* <img src={`/../img/${infoFilm.titreVignette}`} alt={infoFilm.titre} /> */}
-            <img src={`/img/${infoFilm.titreVignette}`} alt={infoFilm.titre} />
-
-        </div>
+        <main>
+            <div className="container-info-film">
+                <img className="image" src={`/img/${infoFilm.titreVignette}`} alt={infoFilm.titre} />
+                <div className="info-film">
+                    <p><strong>Titre : </strong>{infoFilm.titre}</p>
+                    <p><strong>Description : </strong>{infoFilm.description}</p>
+                    <p><strong>Realisation : </strong>{infoFilm.realisation}</p>
+                    <p><strong>Année : </strong>{infoFilm.annee}</p>
+                    <p><strong>Genre : </strong>
+                        {genres}
+                    </p>
+                    <p><strong>Notes : </strong>
+                        {notes}
+                    </p>
+                </div>
+            </div>
+        </main>
     )
 }
 

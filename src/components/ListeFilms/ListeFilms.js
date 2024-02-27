@@ -25,7 +25,7 @@ function ListeFilms() {
   const tuilesFilm = listeFilms.map((film, index) => {
     // console.log(urlFiltre);
     const filtreChoisi = {urlFiltre: urlFiltre};
-    return <Link key={index} data={film} to={`/film/${film.id}`} activeclassname="active">
+    return <Link key={index} data={film} to={`/film/${film.id}`}>
               <TuileFilm key={index} filtre={filtreChoisi} data={film}/>
             </Link>
   });
@@ -42,8 +42,10 @@ function ListeFilms() {
 
   return (
     <main>
-      <Filtre handleFiltre={filtre}/>
-      <div>
+      <div className="filtre">
+        <Filtre handleFiltre={filtre}/>
+      </div>
+      <div className="container-imgs">
         {tuilesFilm}
       </div>
     </main>
