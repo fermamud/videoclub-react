@@ -11,8 +11,8 @@ function Film() {
     const filmId = useParams();
     // console.log(filmId);
 
-    const urlFilm = `https://four1f-node-api.onrender.com/films/${filmId.id}`;
-    // const urlFilm = `https://demo-en-classe.onrender.com/api/films/${filmId.id}`;
+    // const urlFilm = `https://four1f-node-api.onrender.com/films/${filmId.id}`;
+    const urlFilm = `https://demo-en-classe.onrender.com/api/films/${filmId.id}`;
     
     const [infoFilm, setInfoFilm] = useState({});
 
@@ -21,42 +21,43 @@ function Film() {
         fetch(urlFilm)
             .then((reponse) => reponse.json())
             .then((data) => {
-                // console.log(data);
+                console.log(data);
                 // console.log(data.titreVignette);
                 console.log(data.notes);
                 setInfoFilm(data);
-
                 // add aqui as coisas do fetch
             });
     }, []);
 
+
     const tableauGenres = infoFilm.genres || []; 
-    console.log(tableauGenres);
+    // console.log(tableauGenres);
     const genres = tableauGenres.join(', ');
 
-    const tableauNotes = infoFilm.notes || [];
-    const notes = tableauNotes.join(', ');
+    // tinha isso antes, agora vamos ver se continuara assim
 
-    //console.log(infoFilm);
-    // console.log(genres);
+    // const tableauNotes = infoFilm.notes || [];
+    // const notes = tableauNotes.join(', ');
 
-    async function soumettreNote() {
+    // async function soumettreNote() {
         // dicas da aula
         // fazer tudo funcionar no Film e dps criar um composante pra Vote dps que tudo funcionar
         // appel fetch ficara dentro do Film e faz com o handle
-        // async function soumettreNote(e) {
-            // console.log(e.target)
-        // console.log('ici');
+
+    async function soumettreNote(note) {
+        // console.log(note);
 
         let aNotes;
+        let nbNotesDonnees;
+        let somme = 0;
 
         if(!infoFilm.notes) {
             // esse 1 sera dinamico
             // arredondar average com duas ou uma casa decimal
-            aNotes = [1];   
+            aNotes = [note];  
         } else {
             aNotes = infoFilm.notes;
-            aNotes.push(1);
+            aNotes.push(note);
         }
 
         const oOptions = {
@@ -70,13 +71,26 @@ function Film() {
         let putNote = await fetch(urlFilm, oOptions),
             getFilm = await fetch(urlFilm);
 
+        function setMoyenne() {
+            console.log('setMoyenne');
+            
+        }
+
+        function setNbVote(nbVote) {
+            // console.log('setNbVote');
+            nbNotesDonnees = nbVote;
+            console.log(nbNotesDonnees);
+        }
+
         Promise.all([putNote, getFilm])
             .then((reponse) => reponse[1].json())
             .then((data) => {
-                console.log(data);
-                console.log(data.notes);
-                // setMoyenne()
-                // setNbVote()
+                // console.log(data);
+                // console.log(data.notes);
+                // console.log(data.notes.length);
+                setInfoFilm(data);
+                setMoyenne(somme, note);
+                setNbVote(data.notes.length);
                 // usar o mesmo mecanismo dentro do useEffect
             })
 
@@ -86,7 +100,6 @@ function Film() {
         //         console.log(data);
         //          aqui fariamos nossa segunda fetch, mas fizemos como acima pra ser mais elegante
         //     })
-
 
     }
 
@@ -102,13 +115,19 @@ function Film() {
                     <p><strong>Genre : </strong>
                         {genres}
                     </p>
-                    <p><strong>Notes : </strong>
+                    {/* <p>Notes: {infoFilm.notes}</p> */}
+                    {/* <p><strong>Notes : </strong>
                         {notes}
-                    </p>
+                    </p> */}
                 </div>
             </div>
 
-            <button onClick={soumettreNote}>Vote</button>
+
+            <button onClick={() => soumettreNote(1)}>Vote 1</button>
+            <button onClick={() => soumettreNote(2)}>Vote 2</button>
+            <button onClick={() => soumettreNote(3)}>Vote 3</button>
+            <button onClick={() => soumettreNote(4)}>Vote 4</button>
+            <button onClick={() => soumettreNote(5)}>Vote 5</button>
         </main>
     )
 }

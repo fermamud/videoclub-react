@@ -6,8 +6,8 @@ import './ListeFilms.css';
 
 function ListeFilms() {
   // const urlListeFilms = 'https://four1f-node-api.onrender.com/films';
-  const urlListeFilms = 'data/titre-asc.json';
-  // const urlListeFilms = 'https://demo-en-classe.onrender.com/api/films';
+  // const urlListeFilms = 'data/titre-asc.json';
+  const urlListeFilms = 'https://demo-en-classe.onrender.com/api/films';
   const [urlFiltre, setUrlFiltre] = useState([urlListeFilms]);
 
   const [listeFilms, setListeFilms] = useState([]);
