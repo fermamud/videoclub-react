@@ -4,7 +4,7 @@ import './TuileFilm.css';
 // ternary operator na condicao de affichage
 
 function TuileFilm(props) {
-  //console.log(props.filtre.urlFiltre);
+  // console.log(props.filtre.urlFiltre);
   // console.log(pointJointure);
   const url = props.filtre.urlFiltre;
   const pointInt = url.indexOf('?');

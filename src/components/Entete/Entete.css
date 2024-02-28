@@ -10,7 +10,7 @@ header {
   background-position: center;
   background-repeat: no-repeat;
   display: flex;
-  align-items: end;
+  align-items: flex-end;
 
   & .logo-container {
     align-items: center;

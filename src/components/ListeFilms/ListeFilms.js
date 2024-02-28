@@ -3,12 +3,11 @@ import TuileFilm from '../TuileFilm/TuileFilm';
 import Filtre from '../Filtre/Filtre';
 import { Link } from 'react-router-dom';
 import './ListeFilms.css';
-// olhar o exercicio do compteur pra fazer o Filtre (componente)
 
 function ListeFilms() {
-  //const urlListeFilms = 'https://four1f-node-api.onrender.com/films';
-  // const urlListeFilms = 'data/titre-asc.json';
-  const urlListeFilms = 'https://demo-en-classe.onrender.com/api/films';
+  // const urlListeFilms = 'https://four1f-node-api.onrender.com/films';
+  const urlListeFilms = 'data/titre-asc.json';
+  // const urlListeFilms = 'https://demo-en-classe.onrender.com/api/films';
   const [urlFiltre, setUrlFiltre] = useState([urlListeFilms]);
 
   const [listeFilms, setListeFilms] = useState([]);
@@ -30,14 +29,14 @@ function ListeFilms() {
             </Link>
   });
 
-  function filtre(tri, orderBy) {
-  //function filtre(filtre) {
-  // setUrlFiltre(filtre);
-  
-    setUrlFiltre(`${urlListeFilms}?tri=${tri}&ordre=${orderBy}`);
+  // function filtre(tri, orderBy) {
     // gerar dinamicamente, nao seis funcoes, 2 opcoes : passar url em argumento ou pego o elemento do target com estrutura condicional
     // a funcao filtre vai estar no componente filtre
-    // setUrlFiltre('data/realisation-asc.json');
+    
+      // setUrlFiltre(`${urlListeFilms}?tri=${tri}&ordre=${orderBy}`);
+  // }
+  function filtre(filtre) {
+  setUrlFiltre(filtre);
   }
 
   return (
