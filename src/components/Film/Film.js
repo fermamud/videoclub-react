@@ -40,6 +40,7 @@ function Film() {
 
     const tableauNotes = infoFilm.notes || [];
     const notes = tableauNotes.join(', ');
+    console.log(notes);
 
     // fazer tudo funcionar no Film e dps criar um composante pra Vote dps que tudo funcionar
     // appel fetch ficara dentro do Film e faz com o handle
@@ -94,8 +95,9 @@ function Film() {
                     <p><strong>Genres : </strong>
                         {genres}
                     </p>
-                    <p><strong>Notes : </strong>
-                        {notes}
+                    <p><strong>Note{(tableauNotes.length > 1) ? 's' : ''} : </strong>
+                    {/* {notes} */}
+                        {(tableauNotes.length > 0) ? notes : 'Aucune note enregistré'}
                     </p>
                     <p>Votes: {nbVotes}</p>
                     <p>Average: {average}</p>

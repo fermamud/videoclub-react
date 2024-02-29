@@ -62,8 +62,8 @@ export default App;
 // À faire suite au cours 11
 // - Dynamiser la valeur récupérée (de 1 à 5) -> ok
 // - Afficher la moyenne des votes (limitée à 2 chiffre suite au point) et le nombre de vote(s) -> ok
-// - Gestion vote / votes s'il y a plus d'un vote
+// - Gestion vote / votes s'il y a plus d'un vote-> ok
 // - Si le film n'a reçu aucun vote, injecter le message 'Aucun vote enregistré' (ou autre) -> ok
 // - Mise à jour de la moyenne et du nombre de vote(s) suite à la soumission d'un vote -> ok
 // - Interface engageante pour voter et afficher la moyenne / nombre de vote(s) -> ok
-// - Créer un composant Vote (ou Note)
+// - Créer un composant Vote (ou Note) -> ok
