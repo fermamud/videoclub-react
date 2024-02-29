@@ -18,3 +18,4 @@ root.render(
 // references
 // https://www.freecodecamp.org/news/how-to-use-javascript-array-reduce-method/
 // https://codedamn.com/news/javascript/javascript-round-a-number-to-2-decimal-places-with-examples
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch
