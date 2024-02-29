@@ -6,13 +6,10 @@ function Filtre(props) {
     const [activeItem, setActiveItem] = useState('inactif');
 
     function setParams(tri, orderBy) {
-        console.log(tri);
-        console.log(orderBy);
         props.handleFiltre(tri, orderBy);
     }
 
     function maDeuxiemeFunction(tri) {
-        console.log('segunda funcao');
         setActiveItem(tri);
     }
 

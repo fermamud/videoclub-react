@@ -22,7 +22,6 @@ function ListeFilms() {
   }, [urlFiltre]);
 
   const tuilesFilm = listeFilms.map((film, index) => {
-    // console.log(urlFiltre);
     const filtreChoisi = {urlFiltre: urlFiltre};
     return <Link key={index} data={film} to={`/film/${film.id}`}>
               <TuileFilm key={index} filtre={filtreChoisi} data={film}/>
@@ -30,7 +29,6 @@ function ListeFilms() {
   });
 
   // meu trabalho pessoal
-
   function filtre(tri, orderBy) {
       setUrlFiltre(`${urlListeFilms}?tri=${tri}&ordre=${orderBy}`);
   }
