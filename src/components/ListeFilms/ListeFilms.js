@@ -31,18 +31,15 @@ function ListeFilms() {
 
   // meu trabalho pessoal
 
-  // function filtre(tri, orderBy) {
-    // gerar dinamicamente, nao seis funcoes, 2 opcoes : passar url em argumento ou pego o elemento do target com estrutura condicional
-    // a funcao filtre vai estar no componente filtre
-    
-      // setUrlFiltre(`${urlListeFilms}?tri=${tri}&ordre=${orderBy}`);
-  // }
+  function filtre(tri, orderBy) {
+      setUrlFiltre(`${urlListeFilms}?tri=${tri}&ordre=${orderBy}`);
+  }
 
   // aula
   
-  function filtre(filtre) {
-  setUrlFiltre(filtre);
-  }
+  // function filtre(filtre) {
+  // setUrlFiltre(filtre);
+  // }
 
   return (
     <main>

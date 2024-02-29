@@ -33,11 +33,21 @@
 // - Afficher filtre actif
 // - Par défaut, la tuile d'un film affiche l'image et le titre du film, afficher le réalisateur ou l'année si cette information est filtré
 
+
+// À faire suite au cours 11
+// - Dynamiser la valeur récupérée (de 1 à 5) -> ok
+// - Afficher la moyenne des votes (limitée à 2 chiffre suite au point) et le nombre de vote(s) -> ok
+// - Gestion vote / votes s'il y a plus d'un vote
+// - Si le film n'a reçu aucun vote, injecter le message 'Aucun vote enregistré' (ou autre) -> ok
+// - Mise à jour de la moyenne et du nombre de vote(s) suite à la soumission d'un vote -> ok
+// - Interface engageante pour voter et afficher la moyenne / nombre de vote(s) -> ok
+// - Créer un composant Vote (ou Note)
+
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Entete from '../Entete/Entete';
 import Accueil from '../Accueil/Accueil';
 import ListeFilms from '../ListeFilms/ListeFilms';
-import Filtre from '../Filtre/Filtre';
+// import Filtre from '../Filtre/Filtre';
 import Film from '../Film/Film';
 import Page404 from '../Page404/Page404';
 import './App.css';

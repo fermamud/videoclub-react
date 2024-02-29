@@ -58,3 +58,11 @@ header {
     }
   }
 }
+
+@media screen and (max-width: 480px) {
+  & .logo-container {
+    & .logo {
+      display: none;
+    }
+  }
+}
