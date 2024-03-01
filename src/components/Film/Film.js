@@ -1,9 +1,13 @@
 import { useParams } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
+import { AppContext } from '../App/App';
 import Note from '../Note/Note';
 import './Film.css';
 
 function Film() {
+
+    const context = useContext(AppContext);
+
     // const urlFilm = `https://four1f-node-api.onrender.com/films/${filmId.id}`;
     // console.log(filmId);
     const filmId = useParams();
@@ -40,7 +44,7 @@ function Film() {
 
     const tableauNotes = infoFilm.notes || [];
     const notes = tableauNotes.join(', ');
-    console.log(notes);
+    // console.log(notes);
 
     // fazer tudo funcionar no Film e dps criar um composante pra Vote dps que tudo funcionar
     // appel fetch ficara dentro do Film e faz com o handle
@@ -83,6 +87,52 @@ function Film() {
 
     }
 
+    let blocAjoutCommentaire;
+
+    if (context.estLog) {
+        blocAjoutCommentaire = <form onSubmit={soumettreCommentaire}>
+                                    <textarea placeholder='Ajouter votre commentaires'></textarea>
+                                    <button>Soumettre</button>
+                                </form>
+    }
+
+    async function soumettreCommentaire(e) {
+        e.preventDefault();
+        console.log(e.target);
+        let aCommentaires;
+
+        if(!infoFilm.commentaires) {
+            aCommentaires = [{ commentaire: 'Je suis un commentaire', usager: context.usager}];  
+        } else {
+            aCommentaires = infoFilm.commentaires;
+            aCommentaires.push({ commentaire: 'Je suis un commentaire', usager: context.usager });
+        }
+
+        // appelAsync() uma so chamada com diferentes argumentos pras duas
+        // pra um sera { commentaire: 'Je suis un commentaire', usager: context.usager }
+        // pra outro note
+        // body: JSON.stringify(data)
+        const oOptions = {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({commentaires: aCommentaires})
+        }
+
+        let putCommentaire = await fetch(urlFilm, oOptions),
+            getFilm = await fetch(urlFilm);
+
+        Promise.all([putCommentaire, getFilm])
+            .then((reponse) => reponse[1].json())
+            .then((data) => {
+                console.log(data);
+                setInfoFilm(data);
+                // setNbVote(data.notes.length);
+                // setMoyenne(data.notes, data.notes.length);
+            })
+    }
+
     return (
         <main>
             <div className="container-info-film">
@@ -101,6 +151,9 @@ function Film() {
                     </p>
                     <p>Votes: {nbVotes}</p>
                     <p>Average: {average}</p>
+                </div>
+                <div>
+                    {blocAjoutCommentaire}
                 </div>
             </div>
             <Note handleNote={soumettreNote}/>

@@ -57,7 +57,7 @@ body {
   }
 }
 
-.container-imgs .container-image .image {
+/* .container-imgs .container-image .image {
   opacity: 1;
   transition: width 1s ease, aspect-ratio 1s ease, border-radius 1s ease,
     opacity 1s ease;
@@ -68,7 +68,7 @@ body {
 
 .container-imgs .container-image:hover .image {
   opacity: 1;
-}
+} */
 
 .filtre {
   display: flex;
