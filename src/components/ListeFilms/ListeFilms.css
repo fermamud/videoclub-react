@@ -73,12 +73,14 @@ body {
 .filtre {
   display: flex;
   font-family: "Texte";
-  font-size: max(1.3rem, 1.8vw);
+  font-size: max(1.2rem, 1.2vw);
+  font-weight: bolder;
 
   ul {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: left;
     padding: 0;
     width: 100%;
 

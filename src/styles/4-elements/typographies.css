@@ -7,13 +7,13 @@
 /* Police titres */
 @font-face {
   font-family: "Titre";
-  src: url("../../../public/fonts/IrishGrover-Regular.ttf");
+  src: url("../../../public/fonts/Lobster-Regular.ttf");
 }
 
 /* Police textes */
 @font-face {
   font-family: "Texte";
-  src: url("../../../public/fonts/RedHatDisplay-Regular.ttf");
+  src: url("../../../public/fonts/CutiveMono-Regular.ttf");
 }
 
 /* APAGAR AS QUE NAO USO */

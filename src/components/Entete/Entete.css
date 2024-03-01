@@ -1,9 +1,9 @@
 header {
   background-image: linear-gradient(
       135deg,
-      rgba(0, 121, 128, 0.639) 0%,
-      rgba(253, 246, 233, 0.572) 50%,
-      rgba(0, 121, 128, 0.737) 100%
+      rgba(0, 121, 128, 0.739) 0%,
+      rgba(253, 246, 233, 0.572) 30%,
+      rgba(0, 121, 128, 1) 100%
       /* #fdf6e9 */
       /* #007a80 */
     ),
@@ -23,7 +23,7 @@ header {
 
     & .logo {
       opacity: 1;
-      max-width: var(--width-large);
+      max-width: var(--width-normal);
     }
   }
 
@@ -39,7 +39,8 @@ header {
       margin: 0;
 
       & .active {
-        border-bottom: 3px solid var(--couleur-basique);
+        /* border-bottom: 3px solid var(--couleur-basique); */
+        border-bottom: 3px solid var(--couleur-red);
       }
 
       & li {
@@ -53,7 +54,8 @@ header {
 
         & a {
           font-family: var(--police-titre);
-          color: var(--couleur-basique);
+          /* color: var(--couleur-basique); */
+          color: var(--couleur-red);
           text-decoration: none;
         }
       }

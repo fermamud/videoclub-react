@@ -1,11 +1,10 @@
 :root {
   /* Couleurs */
-  /* --couleur-primaire: #74a0ce; */
-  /* --couleur-secundaire: #3f4348; */
-  --couleur-neutre: #d8dcde;
+  /* --couleur-neutre: #d8dcde; */
   --couleur-basique: #ffffff;
-  --couleur-bg-red: rgba(80, 37, 37, 0.939);
-  --couleur-bg-blue-clair: rgba(82, 72, 114, 0.572);
+  --couleur-neutre: #fdf6e9;
+  --couleur-red: #c73e3e;
+  --couleur-verte: #007a80;
 
   /* Typographies */
   --police-titre: "Titre";
