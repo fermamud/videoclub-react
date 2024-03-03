@@ -44,10 +44,6 @@ function Film() {
 
     const tableauNotes = infoFilm.notes || [];
     const notes = tableauNotes.join(', ');
-    // console.log(notes);
-
-    // fazer tudo funcionar no Film e dps criar um composante pra Vote dps que tudo funcionar
-    // appel fetch ficara dentro do Film e faz com o handle
 
     async function soumettreNote(note) {
         let aNotes;
@@ -91,21 +87,22 @@ function Film() {
 
     if (context.estLog) {
         blocAjoutCommentaire = <form onSubmit={soumettreCommentaire}>
-                                    <textarea placeholder='Ajouter votre commentaires'></textarea>
+                                    <textarea name="commentaire" placeholder='Ajouter votre commentaires'></textarea>
                                     <button>Soumettre</button>
                                 </form>
     }
 
     async function soumettreCommentaire(e) {
         e.preventDefault();
-        console.log(e.target);
+        console.log(e.target.commentaire.value);
+
         let aCommentaires;
 
         if(!infoFilm.commentaires) {
-            aCommentaires = [{ commentaire: 'Je suis un commentaire', usager: context.usager}];  
+            aCommentaires = [{ commentaire: e.target.commentaire.value, usager: context.usager}];  
         } else {
             aCommentaires = infoFilm.commentaires;
-            aCommentaires.push({ commentaire: 'Je suis un commentaire', usager: context.usager });
+            aCommentaires.push({ commentaire: e.target.commentaire.value, usager: context.usager });
         }
 
         // appelAsync() uma so chamada com diferentes argumentos pras duas
@@ -133,6 +130,15 @@ function Film() {
             })
     }
 
+    const tableauCommentaires = infoFilm.commentaires || [];
+    console.log(tableauCommentaires);
+    const comRef = tableauCommentaires.map((chaque) => {
+        return  <div className="commentaire">
+                    <p><strong>Auteur : </strong>{chaque.usager}</p>
+                    <p><strong>Commentaire : </strong>{chaque.commentaire}</p>
+                </div>
+    }); 
+
     return (
         <main>
             <div className="container-info-film">
@@ -157,6 +163,9 @@ function Film() {
                 </div>
             </div>
             <Note handleNote={soumettreNote}/>
+            <div className="commentaires">
+                {comRef}
+            </div>
         </main>
     )
 }

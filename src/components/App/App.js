@@ -1,3 +1,13 @@
+// À faire suite au cours 12
+// - Gestion Logout
+// - Affichage de l'input lorsque logout et du nom de l'usager lorsque login
+// - Dynamiser le commentaire soumis à db -> ok
+// - Factoriser l'appel asynchrone pour l'ajout d'une note et d'un commentaire
+// - Logging ou non, s'il y a un/des commentaire(s), affichez-le(s) (commentaire et auteur) -> ok
+// - (bonus) Créer un composant Commentaires
+// - (bonus) Persévérance du logging au rechargement de page côté client à l'aide d'un localStorage
+
+
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import React, { useState } from 'react';
 import Entete from '../Entete/Entete';
@@ -21,8 +31,8 @@ function App() {
     console.log('login');
    
     if (e.target.usager.value === 'admin') {
-      //   setEstLog(prevEstLog => !prevEstLog)
-      //usa 3 pontos mais se quiser mudar uma coisa so tipo o usager, nesse caso abaixo eh irrelevante
+      // setEstLog(prevEstLog => !prevEstLog)
+      // usa 3 pontos mais se quiser mudar uma coisa so tipo o usager, nesse caso abaixo eh irrelevante
       setLogging(logging => ({ ...logging, estLog: true, usager: e.target.usager.value}));
       e.target.reset();
     }
@@ -93,3 +103,6 @@ export default App;
 // - Mise à jour de la moyenne et du nombre de vote(s) suite à la soumission d'un vote -> ok
 // - Interface engageante pour voter et afficher la moyenne / nombre de vote(s) -> ok
 // - Créer un composant Vote (ou Note) -> ok
+
+
+

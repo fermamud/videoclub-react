@@ -60,6 +60,22 @@
   }
 }
 
+.commentaires {
+  display: flex;
+  flex-direction: column;
+  margin: 7rem;
+
+  & .commentaire {
+    border-bottom: 1px black solid;
+    padding: 1rem;
+
+    & p {
+      font-family: "Texte";
+      font-size: max(1rem, 1.2vw);
+    }
+  }
+}
+
 @media screen and (max-width: 375px) {
   .container-info-film {
     flex-direction: column;

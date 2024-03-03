@@ -17,7 +17,7 @@ function Entete(props) {
     //   <nav>
     //     {/* {props.estLog ? <NavLink to="/admin">Admin</NavLink> : ''} */}
     //     {/* {props.logging.estLog ? <NavLink to="/admin">Admin</NavLink> : ''} */}
-    //     {/* {context.estLog ? <NavLink to="/admin">Admin</NavLink> : ''} */}
+    //     {context.estLog ? <NavLink to="/admin">Admin</NavLink> : ''}
     //     <NavLink to="/liste-films">Liste des Films</NavLink>
     //   </nav>
 
@@ -36,15 +36,24 @@ function Entete(props) {
         <nav>
             <ul>
                 <li>
-                    {/* <a class="active" href="accueil.html">Liste des Films</a> */}
                     <NavLink className="active" to="/liste-films">Liste des Films</NavLink>
                 </li>
-                <li>
-                <form onSubmit={props.handleLogin}>
-                  <input type='text' name="usager" placeholder="Login"></input>
-                  <button>Login</button>
-                </form>
+                <li>  
+                  {/* {context.estLog ? <NavLink to="/admin">Logado - fazer logout</NavLink> : ''} */}
+                  {context.estLog ? 
+                    <NavLink to="/admin">Admin</NavLink> : 
+                    <form onSubmit={props.handleLogin}>
+                      <input type='text' name="usager" placeholder="Login"></input>
+                      <button>Login</button>
+                    </form>
+                  }
                 </li>
+                {/* <li>
+                  <form onSubmit={props.handleLogin}>
+                    <input type='text' name="usager" placeholder="Login"></input>
+                    <button>Login</button>
+                  </form>
+                </li> */}
             </ul>
         </nav>
     </header>
