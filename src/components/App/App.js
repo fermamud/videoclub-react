@@ -2,10 +2,10 @@
 // - Gestion Logout
 // - Affichage de l'input lorsque logout et du nom de l'usager lorsque login
 // - Dynamiser le commentaire soumis à db -> ok
-// - Factoriser l'appel asynchrone pour l'ajout d'une note et d'un commentaire
+// - Factoriser l'appel asynchrone pour l'ajout d'une note et d'un commentaire -> ok
 // - Logging ou non, s'il y a un/des commentaire(s), affichez-le(s) (commentaire et auteur) -> ok
 // - (bonus) Créer un composant Commentaires
-// - (bonus) Persévérance du logging au rechargement de page côté client à l'aide d'un localStorage
+// - (bonus) Persévérance du logging au rechargement de page côté client à l'aide d'un localStorage -> ok
 
 
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
@@ -34,6 +34,10 @@ function App() {
       // setEstLog(prevEstLog => !prevEstLog)
       // usa 3 pontos mais se quiser mudar uma coisa so tipo o usager, nesse caso abaixo eh irrelevante
       setLogging(logging => ({ ...logging, estLog: true, usager: e.target.usager.value}));
+
+      localStorage.setItem('estLog', 'true');
+      localStorage.setItem('usager', 'admin');
+
       e.target.reset();
     }
   }
