@@ -30,11 +30,11 @@ body {
       width: var(--width-normal);
     }
 
-    & .image:hover {
+    /* & .image:hover {
       border-radius: 3rem;
       aspect-ratio: 0.4/0.5;
       width: var(--width-medium);
-    }
+    } */
 
     & .info-film {
       display: flex;

@@ -16,7 +16,28 @@ function Film() {
     const [infoFilm, setInfoFilm] = useState({});
     const [nbVotes, setNbVote] = useState('Aucun vote enregistré');
     const [average, setAverage] = useState(0);
- 
+    
+    
+    useEffect(() => {
+        fetch(urlFilm)
+        .then((reponse) => reponse.json())
+        .then((data) => {
+            setInfoFilm(data);
+            if (data.notes) {
+                setNbVote(data.notes.length);
+                setMoyenne(data.notes, data.notes.length);
+            }
+        });
+        // eslint-disable-next-line 
+    }, []);
+    
+    const tableauGenres = infoFilm.genres || []; 
+    const genres = tableauGenres.join(', ');
+    
+    const tableauNotes = infoFilm.notes || [];
+    const notes = tableauNotes.join(', ');
+
+
     function setMoyenne(tableauNotes, nbNotesDonnees) {
         const total = tableauNotes.reduce((somme, note) => {
             return somme += note;
@@ -25,27 +46,36 @@ function Film() {
         const average = (total / nbNotesDonnees).toFixed(2);
         setAverage(average);
     }
+    
+    async function appelAsync(array, cle) {
+        console.log(array);
+        console.log(cle);
 
-    useEffect(() => {
-        fetch(urlFilm)
-            .then((reponse) => reponse.json())
+        const requestBody = { [cle]: array };
+
+        const oOptions = {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(requestBody)
+        }
+
+        let putInfo = await fetch(urlFilm, oOptions),
+        getFilm = await fetch(urlFilm);
+
+        Promise.all([putInfo, getFilm])
+            .then((reponse) => reponse[1].json())
             .then((data) => {
                 console.log(data);
                 setInfoFilm(data);
-                if (data.notes) {
-                    setNbVote(data.notes.length);
-                    setMoyenne(data.notes, data.notes.length);
-                }
-            });
-    }, []);
-
-    const tableauGenres = infoFilm.genres || []; 
-    const genres = tableauGenres.join(', ');
-
-    const tableauNotes = infoFilm.notes || [];
-    const notes = tableauNotes.join(', ');
+                setNbVote(data.notes.length);
+                setMoyenne(data.notes, data.notes.length);
+            })
+    }
 
     async function soumettreNote(note) {
+        console.log(note);
         let aNotes;
 
         if(!infoFilm.notes) {
@@ -55,32 +85,25 @@ function Film() {
             aNotes.push(note);
         }
 
-        const oOptions = {
-            method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({notes: aNotes})
-        }
+        appelAsync(aNotes, 'notes');
+        // const oOptions = {
+        //     method: 'PUT',
+        //     headers: {
+        //         'Content-Type': 'application/json'
+        //     },
+        //     body: JSON.stringify({notes: aNotes})
+        // }
 
-        let putNote = await fetch(urlFilm, oOptions),
-            getFilm = await fetch(urlFilm);
+        // let putNote = await fetch(urlFilm, oOptions),
+        //     getFilm = await fetch(urlFilm);
 
-        Promise.all([putNote, getFilm])
-            .then((reponse) => reponse[1].json())
-            .then((data) => {
-                setInfoFilm(data);
-                setNbVote(data.notes.length);
-                setMoyenne(data.notes, data.notes.length);
-            })
-
-        // fetch(urlFilm, oOptions)
-        //     .then((response) => response.json())
+        // Promise.all([putNote, getFilm])
+        //     .then((reponse) => reponse[1].json())
         //     .then((data) => {
-        //         console.log(data);
-        //          aqui fariamos nossa segunda fetch, mas fizemos como acima pra ser mais elegante
+        //         setInfoFilm(data);
+        //         setNbVote(data.notes.length);
+        //         setMoyenne(data.notes, data.notes.length);
         //     })
-
     }
 
     let blocAjoutCommentaire;
@@ -89,13 +112,11 @@ function Film() {
         blocAjoutCommentaire = <form onSubmit={soumettreCommentaire}>
                                     <textarea name="commentaire" placeholder='Ajouter votre commentaires'></textarea>
                                     <button>Soumettre</button>
-                                </form>
+                                </form>   
     }
 
     async function soumettreCommentaire(e) {
         e.preventDefault();
-        console.log(e.target.commentaire.value);
-
         let aCommentaires;
 
         if(!infoFilm.commentaires) {
@@ -104,36 +125,35 @@ function Film() {
             aCommentaires = infoFilm.commentaires;
             aCommentaires.push({ commentaire: e.target.commentaire.value, usager: context.usager });
         }
-
+        console.log(aCommentaires);
+        appelAsync(aCommentaires, 'commentaires');
         // appelAsync() uma so chamada com diferentes argumentos pras duas
         // pra um sera { commentaire: 'Je suis un commentaire', usager: context.usager }
         // pra outro note
         // body: JSON.stringify(data)
-        const oOptions = {
-            method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({commentaires: aCommentaires})
-        }
 
-        let putCommentaire = await fetch(urlFilm, oOptions),
-            getFilm = await fetch(urlFilm);
+        // const oOptions = {
+        //     method: 'PUT',
+        //     headers: {
+        //         'Content-Type': 'application/json'
+        //     },
+        //     body: JSON.stringify({commentaires: aCommentaires})
+        // }
 
-        Promise.all([putCommentaire, getFilm])
-            .then((reponse) => reponse[1].json())
-            .then((data) => {
-                console.log(data);
-                setInfoFilm(data);
-                // setNbVote(data.notes.length);
-                // setMoyenne(data.notes, data.notes.length);
-            })
+        // let putCommentaire = await fetch(urlFilm, oOptions),
+        //     getFilm = await fetch(urlFilm);
+
+        // Promise.all([putCommentaire, getFilm])
+        //     .then((reponse) => reponse[1].json())
+        //     .then((data) => {
+        //         console.log(data);
+        //         setInfoFilm(data);
+        //     })
     }
 
     const tableauCommentaires = infoFilm.commentaires || [];
-    console.log(tableauCommentaires);
-    const comRef = tableauCommentaires.map((chaque) => {
-        return  <div className="commentaire">
+    const comRef = tableauCommentaires.map((chaque, index) => {
+        return  <div className="commentaire" key={index}>
                     <p><strong>Auteur : </strong>{chaque.usager}</p>
                     <p><strong>Commentaire : </strong>{chaque.commentaire}</p>
                 </div>
@@ -152,7 +172,6 @@ function Film() {
                         {genres}
                     </p>
                     <p><strong>Note{(tableauNotes.length > 1) ? 's' : ''} : </strong>
-                    {/* {notes} */}
                         {(tableauNotes.length > 0) ? notes : 'Aucune note enregistré'}
                     </p>
                     <p>Votes: {nbVotes}</p>
@@ -162,7 +181,7 @@ function Film() {
                     {blocAjoutCommentaire}
                 </div>
             </div>
-            <Note handleNote={soumettreNote}/>
+            <Note handleNote={soumettreNote} />
             <div className="commentaires">
                 {comRef}
             </div>
