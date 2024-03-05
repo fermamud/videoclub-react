@@ -10,11 +10,6 @@ root.render(
   </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-// reportWebVitals();
-
 // references
 // https://www.freecodecamp.org/news/how-to-use-javascript-array-reduce-method/
 // https://codedamn.com/news/javascript/javascript-round-a-number-to-2-decimal-places-with-examples

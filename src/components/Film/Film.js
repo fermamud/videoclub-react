@@ -1,12 +1,16 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState, useContext } from 'react';
 import { AppContext } from '../App/App';
-import Note from '../Note/Note';
+import Note from '../Note/Note'; 
+import Commentaires from '../Commentaires/Commentaires';
 import './Film.css';
 
 function Film() {
 
     const context = useContext(AppContext);
+    const utilizateur = localStorage.getItem('usager');
+    console.log(utilizateur);
+
 
     // const urlFilm = `https://four1f-node-api.onrender.com/films/${filmId.id}`;
     // console.log(filmId);
@@ -106,24 +110,26 @@ function Film() {
         //     })
     }
 
-    let blocAjoutCommentaire;
+    // let blocAjoutCommentaire;
 
-    if (context.estLog) {
-        blocAjoutCommentaire = <form onSubmit={soumettreCommentaire}>
-                                    <textarea name="commentaire" placeholder='Ajouter votre commentaires'></textarea>
-                                    <button>Soumettre</button>
-                                </form>   
-    }
+    // if (context.estLog || localStorage.getItem('estLog') === 'true' || localStorage.getItem('usager') === 'admin') {
+    //     blocAjoutCommentaire = <form onSubmit={soumettreCommentaire}>
+    //                                 <textarea name="commentaire" placeholder='Ajouter votre commentaires'></textarea>
+    //                                 <button>Soumettre</button>
+    //                             </form>   
+    // }
 
-    async function soumettreCommentaire(e) {
-        e.preventDefault();
+    async function soumettreCommentaire(event) {
+        // e.preventDefault();
         let aCommentaires;
 
         if(!infoFilm.commentaires) {
-            aCommentaires = [{ commentaire: e.target.commentaire.value, usager: context.usager}];  
+            // aCommentaires = [{ commentaire: event, usager: context.usager}];  
+            aCommentaires = [{ commentaire: event, usager: context.usager}];  
         } else {
             aCommentaires = infoFilm.commentaires;
-            aCommentaires.push({ commentaire: e.target.commentaire.value, usager: context.usager });
+            // aCommentaires.push({ commentaire: event, usager: context.usager });
+            aCommentaires.push({ commentaire: event, usager: utilizateur });
         }
         console.log(aCommentaires);
         appelAsync(aCommentaires, 'commentaires');
@@ -177,11 +183,18 @@ function Film() {
                     <p>Votes: {nbVotes}</p>
                     <p>Average: {average}</p>
                 </div>
-                <div>
-                    {blocAjoutCommentaire}
-                </div>
             </div>
             <Note handleNote={soumettreNote} />
+
+            <div className="blocCommentaire">
+                {(context.estLog || localStorage.getItem('estLog') === 'true' || localStorage.getItem('usager') === 'admin') ?
+                    <Commentaires handleCommentaire={soumettreCommentaire} /> :
+                    ''
+                }
+            </div>
+            {/* <div className="blocCommentaire">
+                {blocAjoutCommentaire}
+            </div> */}
             <div className="commentaires">
                 {comRef}
             </div>

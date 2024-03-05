@@ -63,7 +63,7 @@
 .commentaires {
   display: flex;
   flex-direction: column;
-  margin: 7rem;
+  margin: 1rem 7rem 1rem 7rem;
 
   & .commentaire {
     border-bottom: 1px black solid;
@@ -72,6 +72,30 @@
     & p {
       font-family: "Texte";
       font-size: max(1rem, 1.2vw);
+    }
+  }
+}
+
+.blocCommentaire {
+  display: flex;
+  justify-content: center;
+  /* flex-direction: column; */
+  margin: 1rem 0 1rem 0;
+
+  & form {
+    display: flex;
+    flex-direction: column;
+
+    & button {
+      background-color: var(--couleur-verte);
+      color: var(--couleur-neutre);
+      margin: 1rem 0 1rem 0;
+      width: 15rem;
+    }
+
+    & textarea {
+      height: 5rem;
+      width: 50rem;
     }
   }
 }

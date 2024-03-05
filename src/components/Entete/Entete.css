@@ -3,9 +3,7 @@ header {
       135deg,
       rgba(0, 121, 128, 0.739) 0%,
       rgba(253, 246, 233, 0.572) 30%,
-      rgba(0, 121, 128, 1) 100%
-      /* #fdf6e9 */
-      /* #007a80 */
+      rgba(0, 121, 128, 1) 100% /* #fdf6e9 */ /* #007a80 */
     ),
     url("../../../public/img/banniere.jpg");
   background-size: cover;
@@ -40,7 +38,7 @@ header {
 
       & .active {
         /* border-bottom: 3px solid var(--couleur-basique); */
-        border-bottom: 3px solid var(--couleur-red);
+        border-bottom: 3px solid var(--couleur-neutre);
       }
 
       & li {
@@ -55,7 +53,7 @@ header {
         & a {
           font-family: var(--police-titre);
           /* color: var(--couleur-basique); */
-          color: var(--couleur-red);
+          color: var(--couleur-neutre);
           text-decoration: none;
         }
       }

@@ -37,10 +37,11 @@ body {
     } */
 
     & .info-film {
+      align-items: center;
       display: flex;
       flex-direction: column;
-      align-items: center;
       justify-content: center;
+      margin-top: 1rem;
       width: max(15rem, 20vw);
 
       h2 {
@@ -80,20 +81,27 @@ body {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: left;
+    /* justify-content: left; */
+    /* margin: 1.5rem 3rem 0 3rem; */
+    margin: 1.5rem;
     padding: 0;
     width: 100%;
+    justify-content: space-evenly;
 
     li {
       cursor: pointer;
       list-style: none;
-      padding: 1.5rem;
+      padding: 1rem;
+      width: 16rem;
+    }
+    & .actif {
+      border-bottom: var(--couleur-verte) var(--space-0_25) solid;
     }
 
     li:hover {
-      background-color: var(--couleur-bg-blue-clair);
+      background-color: var(--couleur-red);
       border: var(--couleur-bg-red) var(--space-0_25) solid;
-      color: white;
+      color: var(--couleur-neutre);
     }
   }
 }

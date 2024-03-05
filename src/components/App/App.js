@@ -25,6 +25,10 @@ function App() {
 
   // const [estLog, setEstLog] = useState(false);
   const [logging, setLogging] = useState({estLog: false, usager: ''});
+  localStorage.getItem('estLog');
+  localStorage.getItem('usager');
+  console.log(localStorage.getItem('estLog'));
+  console.log(localStorage.getItem('usager'));
 
   function login(e) {
     e.preventDefault();
@@ -33,10 +37,10 @@ function App() {
     if (e.target.usager.value === 'admin') {
       // setEstLog(prevEstLog => !prevEstLog)
       // usa 3 pontos mais se quiser mudar uma coisa so tipo o usager, nesse caso abaixo eh irrelevante
-      setLogging(logging => ({ ...logging, estLog: true, usager: e.target.usager.value}));
 
       localStorage.setItem('estLog', 'true');
       localStorage.setItem('usager', 'admin');
+      setLogging(logging => ({ ...logging, estLog: true, usager: e.target.usager.value, localStorage}));
 
       e.target.reset();
     }
