@@ -26,76 +26,38 @@
       font-family: "Texte";
       font-size: max(1.1rem, 1.4vw);
       margin: 0.5rem;
-    }
-  }
-}
 
-.notes {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  /* width: max(20rem, 34vw); */
-
-  & p {
-    font-family: "Texte";
-    font-size: max(1rem, 1.2vw);
-  }
-
-  & .etoiles {
-    display: flex;
-    margin: 1rem;
-
-    button {
-      align-items: center;
-      background-color: var(--couleur-neutre);
-      border: var(--couleur-neutre);
-      display: flex;
-      width: max(4rem, 10vw);
-
-      svg {
-        width: max(4rem, 10vw);
+      & strong {
+        font-weight: bolder;
       }
     }
   }
 }
 
+/* notes ficava aqui */
+.blocCommentaire {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0 1rem 0;
+}
+
 .commentaires {
   display: flex;
   flex-direction: column;
-  margin: 1rem 7rem 1rem 7rem;
+  margin: 1rem var(--width-texte-normal) 1rem var(--width-texte-normal);
 
   & .commentaire {
-    border-bottom: 1px black solid;
-    padding: 1rem;
+    border-bottom: 3px var(--couleur-verte) solid;
+    padding: 0 var(--width-bloc-normal) 0 var(--width-bloc-normal);
 
     & p {
       font-family: "Texte";
       font-size: max(1rem, 1.2vw);
-    }
-  }
-}
+      margin: 2rem;
 
-.blocCommentaire {
-  display: flex;
-  justify-content: center;
-  /* flex-direction: column; */
-  margin: 1rem 0 1rem 0;
-
-  & form {
-    display: flex;
-    flex-direction: column;
-
-    & button {
-      background-color: var(--couleur-verte);
-      color: var(--couleur-neutre);
-      margin: 1rem 0 1rem 0;
-      width: 15rem;
-    }
-
-    & textarea {
-      height: 5rem;
-      width: 50rem;
+      & strong {
+        font-weight: bolder;
+      }
     }
   }
 }

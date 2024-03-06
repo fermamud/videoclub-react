@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import './Note.css';
 
 function Note(props) {
 
@@ -60,10 +61,10 @@ function Note(props) {
 
     return (
         <div className="notes">
-            <div>
-                <p>Cliquez sur l'étoile pour voter ! Quand vous voyez notre ami cinéphile, cela signifie que votre vote a été pris en compte.</p>
+            <div className="notes__texte">
+                <p>Cliquez sur l'étoile pour voter ! Quand vous voyez notre ami cinéphile, cela signifie que votre vote a été pris en compte !</p>
             </div>
-            <div className="etoiles">
+            <div className="notes__etoiles">
                 <button onClick={() => setNote(1)}>
                 <svg width="177" height="169" viewBox="0 0 177 169" fill="none" xmlns="http://www.w3.org/2000/svg" onClick={() => handleClick(1)}>
                 <path d="M88.5 0L108.369 58.3881H172.669L120.65 94.4739L140.519 152.862L88.5 116.776L36.481 152.862L56.3505 94.4739L4.3315 58.3881H68.6305L88.5 0Z" fill="#DDB03B" fillOpacity="1"/>

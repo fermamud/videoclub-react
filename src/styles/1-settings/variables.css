@@ -14,6 +14,7 @@
   --police-h1: 2rem;
   --police-h2: 1.75rem;
   --police-h3: 1.5rem;
+  --police-texte-large: 1.5rem;
   --police-texte: 1.25rem;
   --police-nav: max(2rem, 3vw);
 
@@ -30,4 +31,11 @@
   --width-large: max(22rem, 15vw);
   --width-medium: max(15rem, 22vw);
   --width-normal: max(15rem, 20vw);
+
+  /* Largeur textes */
+  --width-texte-normal: max(3rem, 5vw);
+
+  /* Largeur blocs */
+  --width-bloc-xlarge: max(350px, 40vw);
+  --width-bloc-normal: max(1.5rem, 6vw);
 }

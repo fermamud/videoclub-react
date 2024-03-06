@@ -180,12 +180,11 @@ function Film() {
                     <p><strong>Note{(tableauNotes.length > 1) ? 's' : ''} : </strong>
                         {(tableauNotes.length > 0) ? notes : 'Aucune note enregistré'}
                     </p>
-                    <p>Votes: {nbVotes}</p>
-                    <p>Average: {average}</p>
+                    <p><strong>Votes : </strong>{nbVotes}</p>
+                    <p><strong>Average : </strong>{average}</p>
                 </div>
             </div>
             <Note handleNote={soumettreNote} />
-
             <div className="blocCommentaire">
                 {(context.estLog || localStorage.getItem('estLog') === 'true' || localStorage.getItem('usager') === 'admin') ?
                     <Commentaires handleCommentaire={soumettreCommentaire} /> :

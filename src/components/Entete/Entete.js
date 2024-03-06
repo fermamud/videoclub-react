@@ -29,13 +29,11 @@ function Entete(props) {
 
 
     <header>
-        <div className="logo-container">
-            <NavLink to="/">
-              {/* <img className="logo" src="../../../icones/logo.svg" alt="" /> */}
-              </NavLink>
-        </div>
         <nav>
             <ul>
+                <li>
+                    <NavLink className="active" to="/">Accueil</NavLink>
+                </li>
                 <li>
                     <NavLink className="active" to="/liste-films">Liste des Films</NavLink>
                 </li>

@@ -1,0 +1,33 @@
+.notes {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* width: max(20rem, 34vw); */
+
+  & .notes__texte {
+    margin: 1rem var(--width-texte-normal) 1rem var(--width-texte-normal);
+
+    p {
+      font-family: "Texte";
+      font-size: max(1rem, 1.2vw);
+    }
+  }
+
+  & .notes__etoiles {
+    display: flex;
+    margin: 1rem;
+
+    button {
+      align-items: center;
+      background-color: var(--couleur-neutre);
+      border: var(--couleur-neutre);
+      display: flex;
+      width: max(4rem, 10vw);
+
+      svg {
+        width: max(4rem, 10vw);
+      }
+    }
+  }
+}

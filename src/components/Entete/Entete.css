@@ -10,23 +10,9 @@ header {
   background-position: center;
   background-repeat: no-repeat;
   display: flex;
-  align-items: flex-end;
-
-  & .logo-container {
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    flex-basis: 30%;
-    padding-bottom: var(--space-2);
-
-    & .logo {
-      opacity: 1;
-      max-width: var(--width-normal);
-    }
-  }
+  justify-content: right;
 
   & nav {
-    flex-basis: 70%;
     font-size: var(--police-nav);
 
     & ul {

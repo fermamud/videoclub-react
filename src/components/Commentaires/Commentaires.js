@@ -1,3 +1,5 @@
+import './Commentaires.css';
+
 function Commentaires(props) {
 
     function setCommentaire(e) {
@@ -8,7 +10,7 @@ function Commentaires(props) {
 
     return ( 
         <form onSubmit={setCommentaire}>
-            <textarea name="commentaire" placeholder='Ajouter votre commentaires'></textarea>
+            <textarea name="commentaire" placeholder='Ajouter votre commentaire'></textarea>
             <button>Soumettre</button>
         </form>
     )
