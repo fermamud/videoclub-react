@@ -178,12 +178,11 @@ function Film() {
                     <p><strong>Note{(tableauNotes.length > 1) ? 's' : ''} : </strong>
                         {(tableauNotes.length > 0) ? notes : 'Aucune note enregistré'}
                     </p>
-                    {/* <p className="votes"><strong>Votes : </strong>{nbVotes}</p> */}
-                    <p className="votes">Votes : {nbVotes}</p>
-                    <p><strong>Average : </strong>{average}</p>
+                    {/* <p>Votes : {nbVotes}</p> */}
+                    {/* <p><strong>Average : </strong>{average}</p> */}
                 </div>
             </div>
-            <Note handleNote={soumettreNote} />
+            <Note handleVote={nbVotes} handleAverage={average} handleNote={soumettreNote} />
             {/* <Note handleNote={(note) => soumettreNote(note)} /> */}
             <div className="blocCommentaire">
                 {(context.estLog) ?

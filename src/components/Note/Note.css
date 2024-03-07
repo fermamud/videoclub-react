@@ -5,12 +5,21 @@
   justify-content: center;
   /* width: max(20rem, 34vw); */
 
+  & .notes__info {
+    margin: 1rem var(--width-texte-normal) 1rem var(--width-texte-normal);
+
+    p {
+      font-family: "Titre";
+      font-size: max(1rem, 1.4vw);
+    }
+  }
+
   & .notes__texte {
     margin: 1rem var(--width-texte-normal) 1rem var(--width-texte-normal);
 
     p {
       font-family: "Texte";
-      font-size: max(1rem, 1.2vw);
+      font-size: max(1rem, 1vw);
     }
   }
 

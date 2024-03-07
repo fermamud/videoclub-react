@@ -23,17 +23,6 @@ describe('Composant Film', () => {
         ]
     };
 
-    // const setMoyenne = () => {
-    //     const totalNotas = mockFilm.notes.reduce((acc, curr) => acc + curr, 0);
-    //     const media = totalNotas / mockFilm.notes.length;
-    //     return {
-    //         media: media.toFixed(2), // Arredonde a média para duas casas decimais
-    //         numVotos: mockFilm.notes.length
-    //     };
-    // };
-
-    
-
 
     // Mock du contexte
     const mockContextValue = {
@@ -111,21 +100,15 @@ describe('Composant Film', () => {
         // sur mockFilm, faire la poutine pour trouver la moyenne et le nombre de note(s)
         // existe um pai e um enfant no nosso
         // render le composant Note avec sa/ses props
-    const handleNote = jest.fn();
+        
+        const votes = mockFilm.notes.length;
+        const totalNotes = mockFilm.notes.reduce((acc, curr) => acc + curr, 0);
+        const average = totalNotes / votes;
 
-    mockFilm.notes.map((note) => {
-        render(<Note handleNote={handleNote} />);
-    });
+        render(<Note handleVote={votes} handleAverage={average} />);
 
-    await waitFor(() => { 
-        expect(handleNote).toHaveBeenCalled(1);
-        expect(screen.getByText(`Votes : ${mockFilm.notes.length}`)).toBeInTheDocument();
-    });
-
-
-        //});
-        // sur screen toBeInTheDocument() pour moyenne 
-        // sur screen toBeInTheDocument() pour nombre de vote 
+        expect(screen.getByText(votes)).toBeInTheDocument();
+        expect(screen.getByText(average)).toBeInTheDocument();
     });
 
     
