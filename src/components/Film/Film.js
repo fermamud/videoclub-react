@@ -9,8 +9,6 @@ function Film() {
 
     const context = useContext(AppContext);
     const utilizateur = localStorage.getItem('usager');
-    console.log(utilizateur);
-
 
     // const urlFilm = `https://four1f-node-api.onrender.com/films/${filmId.id}`;
     // console.log(filmId);
@@ -180,13 +178,15 @@ function Film() {
                     <p><strong>Note{(tableauNotes.length > 1) ? 's' : ''} : </strong>
                         {(tableauNotes.length > 0) ? notes : 'Aucune note enregistré'}
                     </p>
-                    <p><strong>Votes : </strong>{nbVotes}</p>
+                    {/* <p className="votes"><strong>Votes : </strong>{nbVotes}</p> */}
+                    <p className="votes">Votes : {nbVotes}</p>
                     <p><strong>Average : </strong>{average}</p>
                 </div>
             </div>
             <Note handleNote={soumettreNote} />
+            {/* <Note handleNote={(note) => soumettreNote(note)} /> */}
             <div className="blocCommentaire">
-                {(context.estLog || localStorage.getItem('estLog') === 'true' || localStorage.getItem('usager') === 'admin') ?
+                {(context.estLog) ?
                     <Commentaires handleCommentaire={soumettreCommentaire} /> :
                     ''
                 }

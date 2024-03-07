@@ -6,6 +6,7 @@ import './Entete.css';
 function Entete(props) {
 
   const context = useContext(AppContext);
+  console.log(context);
   
   console.log(props);
 
@@ -39,7 +40,8 @@ function Entete(props) {
                 </li>
                 <li>  
                   {/* {context.estLog ? <NavLink to="/admin">Logado - fazer logout</NavLink> : ''} */}
-                  {(context.estLog || localStorage.getItem('estLog') === 'true' || localStorage.getItem('usager') === 'admin') ? 
+                  {/* {(context.estLog || localStorage.getItem('estLog') === 'true' || localStorage.getItem('usager') === 'admin') ?  */}
+                  {(context.estLog === 'true' || context.usager === 'admin') ? 
                     <NavLink to="/admin">Admin</NavLink> : 
                     <form onSubmit={props.handleLogin}>
                       <input type='text' name="usager" placeholder="Login"></input>

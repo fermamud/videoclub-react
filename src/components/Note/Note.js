@@ -3,6 +3,8 @@ import './Note.css';
 
 function Note(props) {
 
+    console.log(props);
+    
     function setNote(note) {
         props.handleNote(note);
     }
@@ -14,53 +16,53 @@ function Note(props) {
     const [color5, setColor5] = useState('#DDB03B');
 
     function handleClick(note) {
-    const randomDarkColor = '#' + Math.floor(Math.random() * 128).toString(16).padStart(2, '0') + 
-    Math.floor(Math.random() * 128).toString(16).padStart(2, '0') + 
-    Math.floor(Math.random() * 128).toString(16).padStart(2, '0');
+        const randomDarkColor = '#' + Math.floor(Math.random() * 128).toString(16).padStart(2, '0') + 
+        Math.floor(Math.random() * 128).toString(16).padStart(2, '0') + 
+        Math.floor(Math.random() * 128).toString(16).padStart(2, '0');
 
-    switch (note) {
-        case 1:
-            setColor1(randomDarkColor);
-            setColor2('#DDB03B');
-            setColor3('#DDB03B');
-            setColor4('#DDB03B');
-            setColor5('#DDB03B');
-            break;
-        case 2:
-            setColor1(randomDarkColor);
-            setColor2(randomDarkColor);
-            setColor3('#DDB03B');
-            setColor4('#DDB03B');
-            setColor5('#DDB03B');
-            break;
-        case 3:
-            setColor1(randomDarkColor);
-            setColor2(randomDarkColor);
-            setColor3(randomDarkColor);
-            setColor4('#DDB03B');
-            setColor5('#DDB03B');
-            break;
-        case 4:
-            setColor1(randomDarkColor);
-            setColor2(randomDarkColor);
-            setColor3(randomDarkColor);
-            setColor4(randomDarkColor);
-            setColor5('#DDB03B');
-            break;
-        case 5:
-            setColor1(randomDarkColor);
-            setColor2(randomDarkColor);
-            setColor3(randomDarkColor);
-            setColor4(randomDarkColor);
-            setColor5(randomDarkColor);
-            break;
-        default:
-            break;
-      }
+        switch (note) {
+            case 1:
+                setColor1(randomDarkColor);
+                setColor2('#DDB03B');
+                setColor3('#DDB03B');
+                setColor4('#DDB03B');
+                setColor5('#DDB03B');
+                break;
+            case 2:
+                setColor1(randomDarkColor);
+                setColor2(randomDarkColor);
+                setColor3('#DDB03B');
+                setColor4('#DDB03B');
+                setColor5('#DDB03B');
+                break;
+            case 3:
+                setColor1(randomDarkColor);
+                setColor2(randomDarkColor);
+                setColor3(randomDarkColor);
+                setColor4('#DDB03B');
+                setColor5('#DDB03B');
+                break;
+            case 4:
+                setColor1(randomDarkColor);
+                setColor2(randomDarkColor);
+                setColor3(randomDarkColor);
+                setColor4(randomDarkColor);
+                setColor5('#DDB03B');
+                break;
+            case 5:
+                setColor1(randomDarkColor);
+                setColor2(randomDarkColor);
+                setColor3(randomDarkColor);
+                setColor4(randomDarkColor);
+                setColor5(randomDarkColor);
+                break;
+            default:
+                break;
+        }
     };
 
     return (
-        <div className="notes">
+           <div className="notes">
             <div className="notes__texte">
                 <p>Cliquez sur l'étoile pour voter ! Quand vous voyez notre ami cinéphile, cela signifie que votre vote a été pris en compte !</p>
             </div>
@@ -102,6 +104,7 @@ function Note(props) {
                 </button>
             </div>
         </div>
+
     )
 }
 

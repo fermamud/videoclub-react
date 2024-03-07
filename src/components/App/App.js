@@ -7,6 +7,11 @@
 // - (bonus) Créer un composant Commentaires
 // - (bonus) Persévérance du logging au rechargement de page côté client à l'aide d'un localStorage -> ok
 
+// À faire suite au cours 13
+// - Test unitaire dans le composant Accueil pour vérifier si chaque paragraphe du contenu de l'accueil (Accueil.json) est présent dans le document -> ok
+// - Test unitaire dans le composant ListeFilms pour vérifier si les clés titre, genres, realisation, description, annee et titreVignette sont présentes pour chaque film reçu de l'API (appel fetch) -> ok
+// - Test unitaire dans le composant Film pour vérifier si la moyenne et le nombre de vote(s) affichés via le composant Vote (ou Note) sont présents dans le document
+
 
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import React, { useState } from 'react';
@@ -24,11 +29,16 @@ export const AppContext = React.createContext();
 function App() {
 
   // const [estLog, setEstLog] = useState(false);
-  const [logging, setLogging] = useState({estLog: false, usager: ''});
-  localStorage.getItem('estLog');
-  localStorage.getItem('usager');
-  console.log(localStorage.getItem('estLog'));
-  console.log(localStorage.getItem('usager'));
+  // const [logging, setLogging] = useState({estLog: false, usager: ''});
+
+  const [logging, setLogging] = useState(() => {
+    const localStorageUsager = localStorage.getItem('usager');
+    const localStorageLogin = localStorage.getItem('estLog');
+    return {
+      estLog: localStorageLogin || false,
+      usager: localStorageUsager || ''
+    };
+  });
 
   function login(e) {
     e.preventDefault();
@@ -37,10 +47,9 @@ function App() {
     if (e.target.usager.value === 'admin') {
       // setEstLog(prevEstLog => !prevEstLog)
       // usa 3 pontos mais se quiser mudar uma coisa so tipo o usager, nesse caso abaixo eh irrelevante
-
       localStorage.setItem('estLog', 'true');
-      localStorage.setItem('usager', 'admin');
-      setLogging(logging => ({ ...logging, estLog: true, usager: e.target.usager.value, localStorage}));
+      localStorage.setItem('usager', 'admin');    
+      setLogging(logging => ({ ...logging, estLog: true, usager: e.target.usager.value}));
 
       e.target.reset();
     }

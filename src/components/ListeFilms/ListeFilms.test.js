@@ -41,16 +41,33 @@ describe('Composant ListeFilms', () => {
     test('Vérifie si les clés sont présentes dans la réponse', async () => {
 
         // no nosso trabalho sera para todos dentro de um foreach
-        const reponse = await fetch('https://demo-en-classe.onrender.com/api/films/8DEF7nB2b7pDIOnKeRrO');
-        const data = await reponse.json();
 
-        await waitFor(() => {
-            expect(data).toHaveProperty('titre');
-            expect(data).toHaveProperty('genres');
-            expect(data).toHaveProperty('realisation');
-            expect(data).toHaveProperty('description');
-            expect(data).toHaveProperty('annee');
-            expect(data).toHaveProperty('titreVignette');
+        // const reponse = await fetch('https://demo-en-classe.onrender.com/api/films/8DEF7nB2b7pDIOnKeRrO');
+        // const data = await reponse.json();
+
+        // await waitFor(() => {
+        //     expect(data).toHaveProperty('titre');
+        //     expect(data).toHaveProperty('genres');
+        //     expect(data).toHaveProperty('realisation');
+        //     expect(data).toHaveProperty('description');
+        //     expect(data).toHaveProperty('annee');
+        //     expect(data).toHaveProperty('titreVignette');
+        // });
+            
+        const filmsReponse = await fetch('https://demo-en-classe.onrender.com/api/films');
+        const films = await filmsReponse.json();
+        films.forEach(async film => {
+            const id = film.id;
+            const appel = await fetch(`https://demo-en-classe.onrender.com/api/films/${id}`); 
+            const data = await appel.json();
+            await waitFor(() => {
+                    expect(data).toHaveProperty('titre');
+                    expect(data).toHaveProperty('genres');
+                    expect(data).toHaveProperty('realisation');
+                    expect(data).toHaveProperty('description');
+                    expect(data).toHaveProperty('annee');
+                    expect(data).toHaveProperty('titreVignette');
+                });
         });
     });
 });

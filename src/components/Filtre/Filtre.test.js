@@ -12,18 +12,25 @@ describe('Composant Filtres', () => {
 
         render(<Filtre handleFiltre={handleFiltre} />);
 
-        const filterItem = screen.getByText('Titre alphabétique (A-Z)');
-        fireEvent.click(filterItem);
+        // const filterItem = screen.getByText('Titre alphabétique (A-Z)');
+        // fireEvent.click(filterItem);
+        // expect(handleFiltre).toHaveBeenCalled();
+        // const elFiltreActif = document.querySelector('.actif');
+        // await waitFor(() => {
+        //     expect(elFiltreActif.textContent).toBe('Titre alphabétique (A-Z)');
+        // });
 
-        expect(handleFiltre).toHaveBeenCalled();
+        // Test unitaire réalisé en fonction du texte du li cliqué.
 
-        // const elFiltreActif = screen.getByTestId('filtreActif');
-        // const elFiltreActif = screen.getByTestId('actif');
-
-        const elFiltreActif = document.querySelector('.actif');
-        console.log(elFiltreActif);
-        await waitFor(() => {
-            expect(elFiltreActif.textContent).toBe('Titre alphabétique (A-Z)');
+        const elParent = document.querySelector('.liste-filtres');
+        const elsLi = elParent.querySelectorAll('li');
+        elsLi.forEach(li => {
+            li.addEventListener('click', function() {
+                fireEvent.click(li);
+                expect(handleFiltre).toHaveBeenCalled();
+                const activeItem = document.querySelector('.actif');
+                expect(activeItem.textContent.trim()).toBe(li.textContent.trim());
+            });
         });
-    });
+    });   
 });

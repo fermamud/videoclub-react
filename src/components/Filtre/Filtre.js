@@ -13,9 +13,10 @@ function Filtre(props) {
         setActiveItem(tri);
     }
 
+
     return (
-        <ul>
-            <li data-testid="actif" className={activeItem === 'titreAsc' ? 'actif' : 'inactif'} onClick = {() => {setParams('titre', 'asc'); maDeuxiemeFunction('titreAsc')}}>Titre alphabétique (A-Z)</li>
+        <ul className="liste-filtres">
+            <li className={activeItem === 'titreAsc' ? 'actif' : 'inactif'} onClick = {() => {setParams('titre', 'asc'); maDeuxiemeFunction('titreAsc')}}>Titre alphabétique (A-Z)</li>
             <li className={activeItem === 'titreDesc' ? 'actif' : 'inactif'} onClick = {() => {setParams('titre', 'desc'); maDeuxiemeFunction('titreDesc')}}>Titre alphabétique (Z-A)</li>
             <li className={activeItem === 'realisationAsc' ? 'actif' : 'inactif'} onClick = {() => {setParams('realisation', 'asc'); maDeuxiemeFunction('realisationAsc')}}>Réalisateur alphabétique (A-Z)</li>
             <li className={activeItem === 'realisationDesc' ? 'actif' : 'inactif'} onClick = {() => {setParams('realisation', 'desc'); maDeuxiemeFunction('realisationDesc')}}>Réalisateur alphabétique (Z-A)</li>

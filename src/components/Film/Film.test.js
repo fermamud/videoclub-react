@@ -3,7 +3,7 @@ import { render, screen, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import { AppContext } from '../App/App';
 import Film from './Film';
-//import Vote from '../Vote/Vote';
+import Note from '../Note/Note';
 
 
 describe('Composant Film', () => {
@@ -22,6 +22,17 @@ describe('Composant Film', () => {
             { commentaire: 'Commentaire 2', auteur: 'admin' },
         ]
     };
+
+    // const setMoyenne = () => {
+    //     const totalNotas = mockFilm.notes.reduce((acc, curr) => acc + curr, 0);
+    //     const media = totalNotas / mockFilm.notes.length;
+    //     return {
+    //         media: media.toFixed(2), // Arredonde a média para duas casas decimais
+    //         numVotos: mockFilm.notes.length
+    //     };
+    // };
+
+    
 
 
     // Mock du contexte
@@ -100,11 +111,21 @@ describe('Composant Film', () => {
         // sur mockFilm, faire la poutine pour trouver la moyenne et le nombre de note(s)
         // existe um pai e um enfant no nosso
         // render le composant Note avec sa/ses props
+    const handleNote = jest.fn();
+
+    mockFilm.notes.map((note) => {
+        render(<Note handleNote={handleNote} />);
+    });
+
+    await waitFor(() => { 
+        expect(handleNote).toHaveBeenCalled(1);
+        expect(screen.getByText(`Votes : ${mockFilm.notes.length}`)).toBeInTheDocument();
+    });
+
+
+        //});
         // sur screen toBeInTheDocument() pour moyenne 
         // sur screen toBeInTheDocument() pour nombre de vote 
-
-
-
     });
 
     
