@@ -7,8 +7,7 @@ import App from './components/App/App';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    {/* <Router> */}
-    <Router basename='/videoclub/'>
+    <Router>
       <App />
     </Router>
   </React.StrictMode>
@@ -18,3 +17,4 @@ root.render(
 // https://www.freecodecamp.org/news/how-to-use-javascript-array-reduce-method/
 // https://codedamn.com/news/javascript/javascript-round-a-number-to-2-decimal-places-with-examples
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch
+// https://developer.mozilla.org/en-US/docs/Web/CSS/letter-spacing

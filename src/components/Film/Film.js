@@ -168,16 +168,28 @@ function Film() {
             <div className="container-info-film">
                 <img className="image" src={`/img/${infoFilm.titreVignette}`} alt={infoFilm.titre} />
                 <div className="info-film">
-                    <p><strong>Titre : </strong>{infoFilm.titre}</p>
-                    <p><strong>Description : </strong>{infoFilm.description}</p>
-                    <p><strong>Realisation : </strong>{infoFilm.realisation}</p>
-                    <p><strong>Année : </strong>{infoFilm.annee}</p>
-                    <p><strong>Genres : </strong>
+                    {/* <p><strong>Titre : </strong>{infoFilm.titre}</p> */}
+                    {/* pequeno */}
+                    {/* <p><strong>Genres : </strong>
                         {genres}
-                    </p>
-                    <p><strong>Note{(tableauNotes.length > 1) ? 's' : ''} : </strong>
+                    </p> */}
+
+                    <p>{genres}</p>
+
+                    {/* grande */}
+                    <p className="info-film__titre"><strong>{infoFilm.titre}</strong></p>
+                    {/* menos grande */}
+                    {/* <p><strong>Realisation : </strong>{infoFilm.realisation}</p> */}
+                    <p className="info-film__realisation"><strong>{infoFilm.realisation}</strong></p>
+                    {/* todos os mesmo tamanho aqui */}
+                    {/* <p><strong>Année : </strong>{infoFilm.annee}</p> */}
+                    <p><strong>{infoFilm.annee}</strong></p>
+                    <p><strong>Description : </strong>{infoFilm.description}</p>
+
+                    {/* <p><strong>Note{(tableauNotes.length > 1) ? 's' : ''} : </strong>
                         {(tableauNotes.length > 0) ? notes : 'Aucune note enregistré'}
-                    </p>
+                    </p> */}
+
                     {/* <p>Votes : {nbVotes}</p> */}
                     {/* <p><strong>Average : </strong>{average}</p> */}
                 </div>
