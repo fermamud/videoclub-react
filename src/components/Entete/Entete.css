@@ -44,6 +44,39 @@ header {
         }
       }
     }
+
+    & .form-login {
+      display: flex;
+      flex-direction: column;
+
+      & button {
+        /* border: var(--couleur-red) 2px solid; */
+        border: black 2px solid;
+        /* color: var(--couleur-red); */
+        color: black;
+        font-family: "Texte";
+        font-size: 1rem;
+        font-weight: bolder;
+        height: 1.5rem;
+        margin-top: 0.5rem;
+        /* padding: 1rem; */
+        width: 7rem;
+      }
+
+      & button:hover {
+        color: var(--couleur-neutre);
+        background-color: var(--couleur-verte);
+        border: var(--couleur-neutre) 2px solid;
+      }
+
+      & input {
+        background-color: white;
+        /* border: var(--couleur-red) 2px solid; */
+        border: black 2px solid;
+        height: 2rem;
+        padding: 0.2rem;
+      }
+    }
   }
 }
 

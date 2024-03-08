@@ -9,7 +9,7 @@ function Commentaires(props) {
     }
 
     return ( 
-        <form onSubmit={setCommentaire}>
+        <form className="form-commentaire" onSubmit={setCommentaire}>
             <textarea name="commentaire" placeholder='Ajouter votre commentaire'></textarea>
             <button>Soumettre</button>
         </form>

@@ -43,7 +43,7 @@ function Entete(props) {
                   {/* {(context.estLog || localStorage.getItem('estLog') === 'true' || localStorage.getItem('usager') === 'admin') ?  */}
                   {(context.estLog === 'true' || context.usager === 'admin') ? 
                     <NavLink to="/admin">Admin</NavLink> : 
-                    <form onSubmit={props.handleLogin}>
+                    <form className="form-login" onSubmit={props.handleLogin}>
                       <input type='text' name="usager" placeholder="Login"></input>
                       <button>Login</button>
                     </form>
