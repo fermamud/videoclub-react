@@ -81,12 +81,12 @@ body {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    /* justify-content: left; */
     /* margin: 1.5rem 3rem 0 3rem; */
+    justify-content: right;
+    /* justify-content: space-evenly; */
     margin: 1.5rem;
     padding: 0;
     width: 100%;
-    justify-content: space-evenly;
 
     li {
       cursor: pointer;

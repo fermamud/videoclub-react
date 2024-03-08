@@ -11,8 +11,8 @@ function Entete(props) {
   console.log(props);
 
   return (
-    // em sala de aula
 
+    // em sala de aula
     // <header className="pb-small pt-small">
     //   <NavLink to="/"><h1>Video Club</h1></NavLink>    
     //   <nav>
@@ -28,15 +28,14 @@ function Entete(props) {
     //   </form>
     // </header>
 
-
     <header>
         <nav>
             <ul>
                 <li>
-                    <NavLink className="active" to="/">Accueil</NavLink>
+                    <NavLink to="/">Accueil</NavLink>
                 </li>
                 <li>
-                    <NavLink className="active" to="/liste-films">Liste des Films</NavLink>
+                    <NavLink to="/liste-films">Liste des Films</NavLink>
                 </li>
                 <li>  
                   {/* {context.estLog ? <NavLink to="/admin">Logado - fazer logout</NavLink> : ''} */}

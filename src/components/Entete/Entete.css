@@ -64,9 +64,9 @@ header {
       }
 
       & button:hover {
-        color: var(--couleur-neutre);
-        background-color: var(--couleur-verte);
-        border: var(--couleur-neutre) 2px solid;
+        color: var(--couleur-red);
+        background-color: var(--couleur-neutre);
+        border: var(--couleur-red) 2px solid;
       }
 
       & input {

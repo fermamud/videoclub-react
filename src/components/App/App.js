@@ -1,19 +1,5 @@
-// À faire suite au cours 12
-// - Gestion Logout
-// - Affichage de l'input lorsque logout et du nom de l'usager lorsque login
-// - Dynamiser le commentaire soumis à db -> ok
-// - Factoriser l'appel asynchrone pour l'ajout d'une note et d'un commentaire -> ok
-// - Logging ou non, s'il y a un/des commentaire(s), affichez-le(s) (commentaire et auteur) -> ok
-// - (bonus) Créer un composant Commentaires
-// - (bonus) Persévérance du logging au rechargement de page côté client à l'aide d'un localStorage -> ok
-
-// À faire suite au cours 13
-// - Test unitaire dans le composant Accueil pour vérifier si chaque paragraphe du contenu de l'accueil (Accueil.json) est présent dans le document -> ok
-// - Test unitaire dans le composant ListeFilms pour vérifier si les clés titre, genres, realisation, description, annee et titreVignette sont présentes pour chaque film reçu de l'API (appel fetch) -> ok
-// - Test unitaire dans le composant Film pour vérifier si la moyenne et le nombre de vote(s) affichés via le composant Vote (ou Note) sont présents dans le document
-
-
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
+import { AnimatePresence } from 'framer-motion';
 import React, { useState } from 'react';
 import Entete from '../Entete/Entete';
 import Accueil from '../Accueil/Accueil';
@@ -30,6 +16,7 @@ function App() {
 
   // const [estLog, setEstLog] = useState(false);
   // const [logging, setLogging] = useState({estLog: false, usager: ''});
+  const location = useLocation();
 
   const [logging, setLogging] = useState(() => {
     const localStorageUsager = localStorage.getItem('usager');
@@ -57,19 +44,23 @@ function App() {
 
   return (
     <AppContext.Provider value={logging}>
-      <Router>
+      {/* <Router> */}
         {/* <Entete handleLogin={login} estLog={estLog}/> */}
         <Entete handleLogin={login} />
-        <Routes>
-          <Route path="/" element={<Accueil />} />
-          <Route path="/liste-films" element={<ListeFilms />} />
-          <Route path="/film/:id" element={<Film />}/>
-          <Route path="/*" element={<Page404 />}/>
+        <AnimatePresence mode="wait">
 
-          {/* <Route path="/admin" element={estLog ? <Admin /> : <Navigate to="/" />}/> */}
-          <Route path="/admin" element={logging.estLog ? <Admin /> : <Navigate to="/" />}/>
-        </Routes>
-      </Router>
+          <Routes location={location} ket={location.key}>
+            <Route path="/" className="active" element={<Accueil />} />
+            <Route path="/liste-films" className="active" element={<ListeFilms />} />
+            <Route path="/film/:id" element={<Film />}/>
+            <Route path="/*" element={<Page404 />}/>
+
+            {/* <Route path="/admin" element={estLog ? <Admin /> : <Navigate to="/" />}/> */}
+            <Route path="/admin" element={logging.estLog ? <Admin /> : <Navigate to="/" />}/>
+          </Routes>
+
+        </AnimatePresence>
+      {/* </Router> */}
     </AppContext.Provider>
   );
 }
@@ -120,6 +111,20 @@ export default App;
 // - Mise à jour de la moyenne et du nombre de vote(s) suite à la soumission d'un vote -> ok
 // - Interface engageante pour voter et afficher la moyenne / nombre de vote(s) -> ok
 // - Créer un composant Vote (ou Note) -> ok
+
+// À faire suite au cours 12
+// - Gestion Logout
+// - Affichage de l'input lorsque logout et du nom de l'usager lorsque login
+// - Dynamiser le commentaire soumis à db -> ok
+// - Factoriser l'appel asynchrone pour l'ajout d'une note et d'un commentaire -> ok
+// - Logging ou non, s'il y a un/des commentaire(s), affichez-le(s) (commentaire et auteur) -> ok
+// - (bonus) Créer un composant Commentaires
+// - (bonus) Persévérance du logging au rechargement de page côté client à l'aide d'un localStorage -> ok
+
+// À faire suite au cours 13
+// - Test unitaire dans le composant Accueil pour vérifier si chaque paragraphe du contenu de l'accueil (Accueil.json) est présent dans le document -> ok
+// - Test unitaire dans le composant ListeFilms pour vérifier si les clés titre, genres, realisation, description, annee et titreVignette sont présentes pour chaque film reçu de l'API (appel fetch) -> ok
+// - Test unitaire dans le composant Film pour vérifier si la moyenne et le nombre de vote(s) affichés via le composant Vote (ou Note) sont présents dans le document
 
 
 
