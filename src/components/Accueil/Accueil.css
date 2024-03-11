@@ -1,7 +1,47 @@
-body {
-    background-color: var(--couleur-primaire);
+.container-imgs-accueil {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--space-2) 0 var(--space-2) 0;
 
-    & h1 {
-        font-family: var(--police-titre);
+  & .container-image {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: 100%;
+    justify-content: space-evenly;
+
+    & img {
+      margin: max(0.6rem, 1vw);
+      width: max(22rem, 35vw);
     }
+
+    & .info-film {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin: max(0.6rem, 1vw);
+      width: max(22rem, 35vw);
+      /* height: 60vh; */
+
+      & p {
+        color: #c73e3e;
+        font-family: "Titre";
+        font-size: max(1.5rem, 2vw);
+        letter-spacing: var(--space-0_1);
+        margin: var(--space-0_5);
+      }
+
+      & .all-film {
+        display: flex;
+
+        & .icone-cinema {
+          width: var(--space-3_5);
+        }
+      }
+    }
+  }
 }

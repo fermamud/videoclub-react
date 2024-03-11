@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 import Entete from '../Entete/Entete';
 import Accueil from '../Accueil/Accueil';
 import ListeFilms from '../ListeFilms/ListeFilms';
-// import Filtre from '../Filtre/Filtre';
 import Film from '../Film/Film';
 import Admin from '../Admin/Admin';
 import Page404 from '../Page404/Page404';
@@ -14,8 +13,6 @@ export const AppContext = React.createContext();
 
 function App() {
 
-  // const [estLog, setEstLog] = useState(false);
-  // const [logging, setLogging] = useState({estLog: false, usager: ''});
   const location = useLocation();
 
   const [logging, setLogging] = useState(() => {
@@ -32,8 +29,6 @@ function App() {
     console.log('login');
    
     if (e.target.usager.value === 'admin') {
-      // setEstLog(prevEstLog => !prevEstLog)
-      // usa 3 pontos mais se quiser mudar uma coisa so tipo o usager, nesse caso abaixo eh irrelevante
       localStorage.setItem('estLog', 'true');
       localStorage.setItem('usager', 'admin');    
       setLogging(logging => ({ ...logging, estLog: true, usager: e.target.usager.value}));
@@ -45,20 +40,15 @@ function App() {
   return (
     <AppContext.Provider value={logging}>
       {/* <Router> */}
-        {/* <Entete handleLogin={login} estLog={estLog}/> */}
         <Entete handleLogin={login} />
         <AnimatePresence mode="wait">
-
-          <Routes location={location} ket={location.key}>
+          <Routes location={location} key={location.key}>
             <Route path="/" className="active" element={<Accueil />} />
             <Route path="/liste-films" className="active" element={<ListeFilms />} />
             <Route path="/film/:id" element={<Film />}/>
             <Route path="/*" element={<Page404 />}/>
-
-            {/* <Route path="/admin" element={estLog ? <Admin /> : <Navigate to="/" />}/> */}
             <Route path="/admin" element={logging.estLog ? <Admin /> : <Navigate to="/" />}/>
           </Routes>
-
         </AnimatePresence>
       {/* </Router> */}
     </AppContext.Provider>

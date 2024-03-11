@@ -18,3 +18,5 @@ root.render(
 // https://codedamn.com/news/javascript/javascript-round-a-number-to-2-decimal-places-with-examples
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch
 // https://developer.mozilla.org/en-US/docs/Web/CSS/letter-spacing
+// https://www.figma.com
+// https://reactrouter.com/en/main/hooks/use-location#locationkey

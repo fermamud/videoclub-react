@@ -25,6 +25,5 @@ function Filtre(props) {
         </ul>
     )
 }
-// data-testid="actif"
 
 export default Filtre;

@@ -6,8 +6,6 @@ import Filtre from '../Filtre/Filtre';
 import './ListeFilms.css';
 
 function ListeFilms() {
-  // const urlListeFilms = 'https://four1f-node-api.onrender.com/films';
-  // const urlListeFilms = 'data/titre-asc.json';
   const urlListeFilms = 'https://demo-en-classe.onrender.com/api/films';
   const [urlFiltre, setUrlFiltre] = useState([urlListeFilms]);
 
@@ -16,7 +14,6 @@ function ListeFilms() {
   const [estCharge, setEstCharge] = useState(false);
 
   useEffect(() => {
-    // console.log('rendu');
     fetch(urlFiltre)
       .then((reponse) => reponse.json())
       .then((data) => {
@@ -32,16 +29,9 @@ function ListeFilms() {
             </Link>
   });
 
-  // meu trabalho pessoal
   function filtre(tri, orderBy) {
       setUrlFiltre(`${urlListeFilms}?tri=${tri}&ordre=${orderBy}`);
   }
-
-  // aula
-  
-  // function filtre(filtre) {
-  // setUrlFiltre(filtre);
-  // }
  
   const transition = { duration: 0.5, ease: 'easeInOut' };
   const variant = {

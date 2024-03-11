@@ -10,15 +10,12 @@ function Film() {
     const context = useContext(AppContext);
     const utilizateur = localStorage.getItem('usager');
 
-    // const urlFilm = `https://four1f-node-api.onrender.com/films/${filmId.id}`;
-    // console.log(filmId);
     const filmId = useParams();
     const urlFilm = `https://demo-en-classe.onrender.com/api/films/${filmId.id}`;
     
     const [infoFilm, setInfoFilm] = useState({});
     const [nbVotes, setNbVote] = useState('Aucun vote enregistré');
-    const [average, setAverage] = useState(0);
-    
+    const [average, setAverage] = useState(0); 
     
     useEffect(() => {
         fetch(urlFilm)
@@ -35,10 +32,6 @@ function Film() {
     
     const tableauGenres = infoFilm.genres || []; 
     const genres = tableauGenres.join(', ');
-    
-    const tableauNotes = infoFilm.notes || [];
-    const notes = tableauNotes.join(', ');
-
 
     function setMoyenne(tableauNotes, nbNotesDonnees) {
         const total = tableauNotes.reduce((somme, note) => {
@@ -77,7 +70,6 @@ function Film() {
     }
 
     async function soumettreNote(note) {
-        console.log(note);
         let aNotes;
 
         if(!infoFilm.notes) {
@@ -88,71 +80,19 @@ function Film() {
         }
 
         appelAsync(aNotes, 'notes');
-        // const oOptions = {
-        //     method: 'PUT',
-        //     headers: {
-        //         'Content-Type': 'application/json'
-        //     },
-        //     body: JSON.stringify({notes: aNotes})
-        // }
-
-        // let putNote = await fetch(urlFilm, oOptions),
-        //     getFilm = await fetch(urlFilm);
-
-        // Promise.all([putNote, getFilm])
-        //     .then((reponse) => reponse[1].json())
-        //     .then((data) => {
-        //         setInfoFilm(data);
-        //         setNbVote(data.notes.length);
-        //         setMoyenne(data.notes, data.notes.length);
-        //     })
     }
 
-    // let blocAjoutCommentaire;
-
-    // if (context.estLog || localStorage.getItem('estLog') === 'true' || localStorage.getItem('usager') === 'admin') {
-    //     blocAjoutCommentaire = <form onSubmit={soumettreCommentaire}>
-    //                                 <textarea name="commentaire" placeholder='Ajouter votre commentaires'></textarea>
-    //                                 <button>Soumettre</button>
-    //                             </form>   
-    // }
-
     async function soumettreCommentaire(event) {
-        // e.preventDefault();
         let aCommentaires;
 
-        if(!infoFilm.commentaires) {
-            // aCommentaires = [{ commentaire: event, usager: context.usager}];  
+        if(!infoFilm.commentaires) { 
             aCommentaires = [{ commentaire: event, usager: context.usager}];  
         } else {
             aCommentaires = infoFilm.commentaires;
-            // aCommentaires.push({ commentaire: event, usager: context.usager });
             aCommentaires.push({ commentaire: event, usager: utilizateur });
         }
         console.log(aCommentaires);
         appelAsync(aCommentaires, 'commentaires');
-        // appelAsync() uma so chamada com diferentes argumentos pras duas
-        // pra um sera { commentaire: 'Je suis un commentaire', usager: context.usager }
-        // pra outro note
-        // body: JSON.stringify(data)
-
-        // const oOptions = {
-        //     method: 'PUT',
-        //     headers: {
-        //         'Content-Type': 'application/json'
-        //     },
-        //     body: JSON.stringify({commentaires: aCommentaires})
-        // }
-
-        // let putCommentaire = await fetch(urlFilm, oOptions),
-        //     getFilm = await fetch(urlFilm);
-
-        // Promise.all([putCommentaire, getFilm])
-        //     .then((reponse) => reponse[1].json())
-        //     .then((data) => {
-        //         console.log(data);
-        //         setInfoFilm(data);
-        //     })
     }
 
     const tableauCommentaires = infoFilm.commentaires || [];
@@ -186,10 +126,6 @@ function Film() {
                     <p><strong>{infoFilm.annee}</strong></p>
                     <p><strong>Description : </strong>{infoFilm.description}</p>
 
-                    {/* <p><strong>Note{(tableauNotes.length > 1) ? 's' : ''} : </strong>
-                        {(tableauNotes.length > 0) ? notes : 'Aucune note enregistré'}
-                    </p> */}
-
                     {/* <p>Votes : {nbVotes}</p> */}
                     {/* <p><strong>Average : </strong>{average}</p> */}
                 </div>
@@ -202,9 +138,6 @@ function Film() {
                     ''
                 }
             </div>
-            {/* <div className="blocCommentaire">
-                {blocAjoutCommentaire}
-            </div> */}
             <div className="commentaires">
                 {comRef}
             </div>

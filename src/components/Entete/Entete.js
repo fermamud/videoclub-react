@@ -1,34 +1,17 @@
 import { useContext } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import { AppContext } from '../App/App';
 import './Entete.css';
 
 function Entete(props) {
-
-  const context = useContext(AppContext);
-  console.log(context);
-  
   console.log(props);
+  const context = useContext(AppContext);
+  const location = useLocation();
+
+  const estAccueil = location.pathname === "/" ? true : false; 
 
   return (
-
-    // em sala de aula
-    // <header className="pb-small pt-small">
-    //   <NavLink to="/"><h1>Video Club</h1></NavLink>    
-    //   <nav>
-    //     {/* {props.estLog ? <NavLink to="/admin">Admin</NavLink> : ''} */}
-    //     {/* {props.logging.estLog ? <NavLink to="/admin">Admin</NavLink> : ''} */}
-    //     {context.estLog ? <NavLink to="/admin">Admin</NavLink> : ''}
-    //     <NavLink to="/liste-films">Liste des Films</NavLink>
-    //   </nav>
-
-    //   <form onSubmit={props.handleLogin}>
-    //     <input type='text' name="usager" placeholder="Login"></input>
-    //     <button>Login</button>
-    //   </form>
-    // </header>
-
-    <header>
+    <header className={estAccueil ? "accueil-header" : ""}>
         <nav>
             <ul>
                 <li>
@@ -37,9 +20,7 @@ function Entete(props) {
                 <li>
                     <NavLink to="/liste-films">Liste des Films</NavLink>
                 </li>
-                <li>  
-                  {/* {context.estLog ? <NavLink to="/admin">Logado - fazer logout</NavLink> : ''} */}
-                  {/* {(context.estLog || localStorage.getItem('estLog') === 'true' || localStorage.getItem('usager') === 'admin') ?  */}
+                <li>
                   {(context.estLog === 'true' || context.usager === 'admin') ? 
                     <NavLink to="/admin">Admin</NavLink> : 
                     <form className="form-login" onSubmit={props.handleLogin}>
@@ -48,12 +29,6 @@ function Entete(props) {
                     </form>
                   }
                 </li>
-                {/* <li>
-                  <form onSubmit={props.handleLogin}>
-                    <input type='text' name="usager" placeholder="Login"></input>
-                    <button>Login</button>
-                  </form>
-                </li> */}
             </ul>
         </nav>
     </header>
