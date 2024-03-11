@@ -1,18 +1,49 @@
 .mt-xsmall {
-    margin-top: var(--space-base);
+  margin-top: var(--space-base);
 }
 
 .mt-small {
-    margin-top: calc(var(--space-base) * 2);
+  margin-top: calc(var(--space-base) * 2);
 }
 
 .mt-medium {
-    margin-top: calc(var(--space-base) * 4);
+  margin-top: calc(var(--space-base) * 4);
 }
 
 .mt-large {
-    margin-top: calc(var(--space-base) * 8);
+  margin-top: calc(var(--space-base) * 8);
 }
 
+/* trabalho real */
+.m-xsmall {
+  margin: var(--space-0_5);
+}
 
+.mt-small {
+  margin-top: var(--space-1);
+}
 
+.mb-small {
+  margin-bottom: var(--space-1);
+}
+
+.mt-normal {
+  margin-top: var(--space-2);
+}
+
+.mb-normal {
+  margin-bottom: var(--space-2);
+}
+
+.p-xsmall {
+    padding: var(--space-0_5);
+}
+
+.p-small {
+  padding: var(--space-1);
+}
+
+/* padding: var(--space-2) 0 var(--space-2) 0; */
+/* padding: 1rem; */
+/* padding: 0.5rem; */
+/* margin: 1rem 0 1rem 0; */

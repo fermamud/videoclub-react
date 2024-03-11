@@ -4,18 +4,16 @@
 
   & button {
     background-color: var(--couleur-verte);
-    border-radius: 1rem 0 1rem 0;
+    border-radius: var(--space-1) 0 var(--space-1) 0;
     color: var(--couleur-neutre);
     font-family: "Titre";
     font-size: var(--police-texte-large);
-    margin: 1rem 0 1rem 0;
-    padding: 1rem;
     width: 15rem;
   }
 
   & button:hover {
     background-color: var(--couleur-neutre);
-    border-radius: 1rem 0 1rem 0;
+    border-radius: var(--space-1) 0 var(--space-1) 0;
     border: 3px var(--couleur-verte) solid;
     color: var(--couleur-red);
   }
@@ -24,7 +22,7 @@
     background-color: var(--couleur-neutre);
     border: 3px var(--couleur-verte) solid;
     height: 10rem;
-    padding: 0.5rem;
+    /* padding: 0.5rem; */
     width: var(--width-bloc-xlarge);
   }
 }

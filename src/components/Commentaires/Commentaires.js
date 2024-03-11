@@ -10,8 +10,8 @@ function Commentaires(props) {
 
     return ( 
         <form className="form-commentaire" onSubmit={setCommentaire}>
-            <textarea name="commentaire" placeholder='Ajouter votre commentaire'></textarea>
-            <button>Soumettre</button>
+            <textarea name="commentaire" placeholder='Ajouter votre commentaire' className="p-xsmall"></textarea>
+            <button className="mt-small mb-small p-small">Soumettre</button>
         </form>
     )
 }

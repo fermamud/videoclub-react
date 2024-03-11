@@ -26,7 +26,6 @@ function App() {
 
   function login(e) {
     e.preventDefault();
-    console.log('login');
    
     if (e.target.usager.value === 'admin') {
       localStorage.setItem('estLog', 'true');

@@ -6,7 +6,7 @@ function Accueil() {
 
   // Affichage chaque paragraph
   const dataAffichage = data.map((section, index) => {
-    return <p key={index}>{section}</p>;
+    return <p className="m-xsmall" key={index}>{section}</p>;
   });
 
   // Animation main
@@ -32,7 +32,7 @@ function Accueil() {
       exit='exit'
       variants={variant}
     >
-        <div className="container-imgs-accueil">
+        <div className="container-imgs-accueil mt-normal mb-normal">
             <div className="container-image">
                 <img className="image" src="img/accueil_2.jpg" alt="" />
                 <div className="info-film">
