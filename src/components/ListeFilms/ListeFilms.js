@@ -8,7 +8,9 @@ import './ListeFilms.css';
 function ListeFilms() {
   const urlListeFilms = 'https://demo-en-classe.onrender.com/api/films';
   const [urlFiltre, setUrlFiltre] = useState([urlListeFilms]);
-
+  // const [urlFiltre, setUrlFiltre] = useState([urlListeFilms]);
+  // const [tri, setTri] = useState('titre');
+  
   const [listeFilms, setListeFilms] = useState([]);
 
   const [estCharge, setEstCharge] = useState(false);
@@ -17,12 +19,16 @@ function ListeFilms() {
     fetch(urlFiltre)
       .then((reponse) => reponse.json())
       .then((data) => {
+        console.log('entrei aqui');
+        console.log(data);
         setListeFilms(data);
         setEstCharge(true);
       });
   }, [urlFiltre]);
 
   const tuilesFilm = listeFilms.map((film, index) => {
+    //console.log(listeFilms);
+    //console.log(urlFiltre);
     const filtreChoisi = {urlFiltre: urlFiltre};
     return <Link key={index} data={film} to={`/film/${film.id}`}>
               <TuileFilm key={index} filtre={filtreChoisi} data={film}/>
@@ -30,14 +36,18 @@ function ListeFilms() {
   });
 
   function filtre(tri, orderBy) {
+      // setTri(tri);
+      console.log(tri);
+      console.log(orderBy);
       setUrlFiltre(`${urlListeFilms}?tri=${tri}&ordre=${orderBy}`);
+      //console.log(urlFiltre);
   }
  
-  const transition = { duration: 0.5, ease: 'easeInOut' };
+  const transition = { duration: 1.5, ease: 'easeInOut' };
   const variant = {
     hidden: {opacity: 0, y: 25 },
     visible: { opacity: 1, y: 0, transition },
-    exit: { opacity: 1, y: 25, transition }
+    exit: { opacity: 1, y: -25, transition }
   }
 
   return (
@@ -54,9 +64,10 @@ function ListeFilms() {
         </motion.div>
       {/* </div> */}
       {/* <div > */}
-      {estCharge ? (
+      {estCharge ? 
         <motion.div
-          key='liste-film'
+          // key='liste-film'
+          key={urlFiltre}
           initial= 'hidden'
           animate='visible'
           exit='exit'
@@ -65,7 +76,8 @@ function ListeFilms() {
         >
           {tuilesFilm}
         </motion.div>
-        ) : ( '' )}
+         : ( '' )}
+
         {/* </div> */}
     </main>
   );

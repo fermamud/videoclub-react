@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState, useContext } from 'react';
 import { AppContext } from '../App/App';
+import { motion } from 'framer-motion';
 import Note from '../Note/Note'; 
 import Commentaires from '../Commentaires/Commentaires';
 import './Film.css';
@@ -8,7 +9,7 @@ import './Film.css';
 function Film() {
 
     const context = useContext(AppContext);
-    const utilizateur = localStorage.getItem('usager');
+    // const utilizateur = localStorage.getItem('usager');
 
     const filmId = useParams();
     const urlFilm = `https://demo-en-classe.onrender.com/api/films/${filmId.id}`;
@@ -21,18 +22,20 @@ function Film() {
         fetch(urlFilm)
         .then((reponse) => reponse.json())
         .then((data) => {
+            console.log(data);
             setInfoFilm(data);
             if (data.notes) {
                 setNbVote(data.notes.length);
                 setMoyenne(data.notes, data.notes.length);
             }
         });
-        // eslint-disable-next-line 
-    }, []);
+    }, [urlFilm]);
     
+    // Gestion affichage des genres
     const tableauGenres = infoFilm.genres || []; 
     const genres = tableauGenres.join(', ');
 
+    // Gestion de calcul de moyenne de vote
     function setMoyenne(tableauNotes, nbNotesDonnees) {
         const total = tableauNotes.reduce((somme, note) => {
             return somme += note;
@@ -42,10 +45,9 @@ function Film() {
         setAverage(average);
     }
     
+    // Appel async pour les notes e les commentaires
     async function appelAsync(array, cle) {
-        console.log(array);
-        console.log(cle);
-
+        // Requete pour la creation de "notes" ou "commentaires" dans la BD avec les donnees passé en parametre
         const requestBody = { [cle]: array };
 
         const oOptions = {
@@ -56,19 +58,20 @@ function Film() {
             body: JSON.stringify(requestBody)
         }
 
+        // Execution d'appel fetch pour l'insertion des "notes" ou "commentaires" 
         let putInfo = await fetch(urlFilm, oOptions),
         getFilm = await fetch(urlFilm);
 
         Promise.all([putInfo, getFilm])
             .then((reponse) => reponse[1].json())
             .then((data) => {
-                console.log(data);
                 setInfoFilm(data);
                 setNbVote(data.notes.length);
                 setMoyenne(data.notes, data.notes.length);
             })
     }
 
+    // Function pour soumettre une note
     async function soumettreNote(note) {
         let aNotes;
 
@@ -82,6 +85,7 @@ function Film() {
         appelAsync(aNotes, 'notes');
     }
 
+    // Function pour soumettre un commentaire
     async function soumettreCommentaire(event) {
         let aCommentaires;
 
@@ -89,22 +93,42 @@ function Film() {
             aCommentaires = [{ commentaire: event, usager: context.usager}];  
         } else {
             aCommentaires = infoFilm.commentaires;
-            aCommentaires.push({ commentaire: event, usager: utilizateur });
+            aCommentaires.push({ commentaire: event, usager: context.usager });
         }
-        console.log(aCommentaires);
+
         appelAsync(aCommentaires, 'commentaires');
     }
 
+    // Gestion affichage des commentaires
     const tableauCommentaires = infoFilm.commentaires || [];
-    const comRef = tableauCommentaires.map((chaque, index) => {
+    const chaqueCommentaire = tableauCommentaires.map((chaque, index) => {
         return  <div className="commentaire" key={index}>
                     <p><strong>Auteur : </strong>{chaque.usager}</p>
                     <p><strong>Commentaire : </strong>{chaque.commentaire}</p>
                 </div>
     }); 
 
+    const transition = { duration: 1.5, ease: 'easeInOut' };
+
     return (
         <main>
+            <motion.div
+                key='film'
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 , transition }}
+                exit={{ opacity: 1, transition }}
+                className="container-info-film"
+            >
+                <div className="info-film">
+                    <p className="info-film__genre">{genres}</p>
+                    <p className="info-film__titre"><strong>{infoFilm.titre}</strong></p>
+                    <p className="info-film__realisation"><strong>{infoFilm.realisation}</strong></p>
+                    <p><strong>{infoFilm.annee}</strong></p>
+                    <p>{infoFilm.description}</p>
+                </div>
+                <img className="image" src={`/img/${infoFilm.titreVignette}`} alt={infoFilm.titre} />
+            </motion.div>
+
             <div className="container-info-film">
                 <img className="image" src={`/img/${infoFilm.titreVignette}`} alt={infoFilm.titre} />
                 <div className="info-film">
@@ -125,11 +149,9 @@ function Film() {
                     {/* <p><strong>Année : </strong>{infoFilm.annee}</p> */}
                     <p><strong>{infoFilm.annee}</strong></p>
                     <p><strong>Description : </strong>{infoFilm.description}</p>
-
-                    {/* <p>Votes : {nbVotes}</p> */}
-                    {/* <p><strong>Average : </strong>{average}</p> */}
                 </div>
             </div>
+
             <Note handleVote={nbVotes} handleAverage={average} handleNote={soumettreNote} />
             {/* <Note handleNote={(note) => soumettreNote(note)} /> */}
             <div className="blocCommentaire">
@@ -139,7 +161,7 @@ function Film() {
                 }
             </div>
             <div className="commentaires">
-                {comRef}
+                {chaqueCommentaire}
             </div>
         </main>
     )

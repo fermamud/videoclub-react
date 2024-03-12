@@ -2,8 +2,6 @@ import { useState } from 'react';
 import './Note.css';
 
 function Note(props) {
-
-    console.log(props);
     
     function setNote(note) {
         props.handleNote(note);
@@ -65,8 +63,9 @@ function Note(props) {
         <div>
             <div className="notes">     
                 <div className="notes__info">
-                    <p><strong>Votes : </strong>{props.handleVote}</p>
-                    <p><strong>Average : </strong>{props.handleAverage}</p>   
+                    <p data-testid="vote"><strong>Vote{(props.handleVote > 1) ? 's' : ''} : </strong>{props.handleVote}</p>
+                    {/* <p data-testid="vote"><strong>Votes : </strong>{props.handleVote}</p> */}
+                    <p data-testid="average"><strong>Average : </strong>{props.handleAverage} / 5</p>   
                 </div>
                 <div className="notes__texte">
                     <p>Cliquez sur l'étoile pour voter ! Quand vous voyez notre ami cinéphile, cela signifie que votre vote a été pris en compte</p>

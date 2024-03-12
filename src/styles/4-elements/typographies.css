@@ -10,10 +10,15 @@
   src: url("../../../public/fonts/Lobster-Regular.ttf");
 }
 
-/* Police textes */
+/* Police textes plus importantes */
 @font-face {
   font-family: "Texte";
   src: url("../../../public/fonts/CutiveMono-Regular.ttf");
 }
 
+/* Police textes normales */
+@font-face {
+  font-family: "Normal";
+  src: url("../../../public/fonts/TenorSans-Regular.ttf");
+}
 /* APAGAR AS QUE NAO USO */

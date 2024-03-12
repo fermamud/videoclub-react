@@ -22,10 +22,11 @@ describe('Composant ListeFilms', () => {
         ]
     };
 
-
+    
     test('Vérifie la tuile d\'un film', () => {
-
-        render(<TuileFilm data={mockFilm} />); // versao ficticia e virtual do composant
+        
+        const filtre = {urlFiltre: 'https://demo-en-classe.onrender.com/api/films'};
+        render(<TuileFilm data={mockFilm} filtre={filtre} />);
 
         expect(screen.getByText(mockFilm.titre)).toBeInTheDocument();
         const elImg = document.querySelector('img');

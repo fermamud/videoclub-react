@@ -20,3 +20,5 @@ root.render(
 // https://developer.mozilla.org/en-US/docs/Web/CSS/letter-spacing
 // https://www.figma.com
 // https://reactrouter.com/en/main/hooks/use-location#locationkey
+// https://www.youtube.com/watch?v=0ZJgIjIuY7U
+// https://www.nan.fyi/keys-in-framer-motion

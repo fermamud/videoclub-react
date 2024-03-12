@@ -7,7 +7,9 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  gap: max(0.5rem, 1vw);
+  /* justify-content: space-evenly; */
+  justify-content: center;
   padding: 2rem 0 2rem 0;
 
   & .image {
@@ -17,17 +19,21 @@
   }
 
   & .info-film {
+    /* aspect-ratio: 0.2/0.25; */
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    width: max(20rem, 34vw);
+    /* justify-content: space-between; */
+    /* width: max(20rem, 34vw); */
+    width: var(--width-xlarge);
 
     & p {
-      font-family: "Texte";
+      justify-content: left;
+      display: flex;
+      font-family: "Normal";
       /* font-family: sans-serif; */
       /* font-size: max(1.1rem, 1.4vw); */
-      font-size: max(1rem, 1.8vw);
-      margin: 0.5rem;
+      font-size: max(1.2rem, 1.8vw);
+      margin: max(0.4rem, 1vw) 0 max(0.4rem, 1vw) 0;
 
       & strong {
         font-weight: bolder;
@@ -36,14 +42,17 @@
 
     & .info-film__titre {
       font-family: "Titre";
-      font-size: max(1.4rem, 3vw);
-      letter-spacing: 0.25rem;
+      font-size: max(1.6rem, 3vw);
+      letter-spacing: 0.2rem;
     }
 
     & .info-film__realisation {
       font-size: max(1.2rem, 2.5vw);
     }
 
+    & .info-film__genre {
+      font-size: max(0.8rem, 1vw);
+    }
   }
 }
 

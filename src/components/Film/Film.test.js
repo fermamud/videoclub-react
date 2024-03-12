@@ -18,7 +18,7 @@ describe('Composant Film', () => {
         annee: 1979,
         notes: [3, 4, 5, 2, 1],
         commentaires: [
-            { commentaire: 'Ccommentaire 1', auteur: 'admin' },
+            { commentaire: 'Commentaire 1', auteur: 'admin' },
             { commentaire: 'Commentaire 2', auteur: 'admin' },
         ]
     };
@@ -95,31 +95,25 @@ describe('Composant Film', () => {
      * À faire
      */
     test('Vérifie la moyenne et le nombre de vote(s)', async () => {
-        // copiar setMoyenne aqui, ele disse, testar pra ver se eh isso msm
-
-        // sur mockFilm, faire la poutine pour trouver la moyenne et le nombre de note(s)
-        // existe um pai e um enfant no nosso
-        // render le composant Note avec sa/ses props
         
         const votes = mockFilm.notes.length;
         const totalNotes = mockFilm.notes.reduce((acc, curr) => acc + curr, 0);
-        const average = totalNotes / votes;
+        const average = (totalNotes/votes).toFixed(2);
 
         render(<Note handleVote={votes} handleAverage={average} />);
 
         expect(screen.getByText(votes)).toBeInTheDocument();
-        expect(screen.getByText(average)).toBeInTheDocument();
+        expect(screen.getByTestId('vote')).toHaveTextContent(votes.toString());
+        expect(screen.getByTestId('average')).toHaveTextContent(average.toString());
+
     });
 
     
     /**
+     * Reponse dans la ListeFilms.test.js
      * Il est également important de tester avec des données réelles provenant du serveur pour s'assurer que l'application fonctionne correctement dans un environnement plus réaliste. 
      */
     test('Vérifie si les clés sont présentes dans la réponse', async () => {
-
-
-
-
 
     });
 });
