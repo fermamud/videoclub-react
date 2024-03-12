@@ -103,8 +103,8 @@ function Film() {
     const tableauCommentaires = infoFilm.commentaires || [];
     const chaqueCommentaire = tableauCommentaires.map((chaque, index) => {
         return  <div className="commentaire" key={index}>
-                    <p className="m-normal"><strong>Auteur : </strong>{chaque.usager}</p>
-                    <p className="m-normal"><strong>Commentaire : </strong>{chaque.commentaire}</p>
+                    <p><strong>Auteur : </strong>{chaque.usager}</p>
+                    <p><strong>Commentaire : </strong>{chaque.commentaire}</p>
                 </div>
     }); 
 
@@ -117,7 +117,7 @@ function Film() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 , transition }}
                 exit={{ opacity: 1, transition }}
-                className="container-info-film pt-normal pb-normal"
+                className="container-info-film"
             >
                 <div className="info-film">
                     <p className="info-film__genre">{genres}</p>
@@ -129,9 +129,32 @@ function Film() {
                 <img className="image" src={`/img/${infoFilm.titreVignette}`} alt={infoFilm.titre} />
             </motion.div>
 
+            <div className="container-info-film">
+                <img className="image" src={`/img/${infoFilm.titreVignette}`} alt={infoFilm.titre} />
+                <div className="info-film">
+                    {/* <p><strong>Titre : </strong>{infoFilm.titre}</p> */}
+                    {/* pequeno */}
+                    {/* <p><strong>Genres : </strong>
+                        {genres}
+                    </p> */}
+
+                    <p>{genres}</p>
+
+                    {/* grande */}
+                    <p className="info-film__titre"><strong>{infoFilm.titre}</strong></p>
+                    {/* menos grande */}
+                    {/* <p><strong>Realisation : </strong>{infoFilm.realisation}</p> */}
+                    <p className="info-film__realisation"><strong>{infoFilm.realisation}</strong></p>
+                    {/* todos os mesmo tamanho aqui */}
+                    {/* <p><strong>Année : </strong>{infoFilm.annee}</p> */}
+                    <p><strong>{infoFilm.annee}</strong></p>
+                    <p><strong>Description : </strong>{infoFilm.description}</p>
+                </div>
+            </div>
+
             <Note handleVote={nbVotes} handleAverage={average} handleNote={soumettreNote} />
             {/* <Note handleNote={(note) => soumettreNote(note)} /> */}
-            <div className="blocCommentaire mt-small mb-small">
+            <div className="blocCommentaire">
                 {(context.estLog) ?
                     <Commentaires handleCommentaire={soumettreCommentaire} /> :
                     ''

@@ -9,7 +9,7 @@ function ListeFilms() {
   const urlListeFilms = 'https://demo-en-classe.onrender.com/api/films';
   const [urlFiltre, setUrlFiltre] = useState([urlListeFilms]);
 
-  const [tri, setTri] = useState('');
+  // const [tri, setTri] = useState('titre');
   
   const [listeFilms, setListeFilms] = useState([]);
 
@@ -29,16 +29,12 @@ function ListeFilms() {
   const tuilesFilm = listeFilms.map((film, index) => {
     const filtreChoisi = {urlFiltre: urlFiltre};
     return <Link key={index} data={film} to={`/film/${film.id}`}>
-              <TuileFilm key={index} tri={tri} filtre={filtreChoisi} data={film}/>
+              <TuileFilm key={index} filtre={filtreChoisi} data={film}/>
             </Link>
   });
 
   function filtre(tri, orderBy) {
       setUrlFiltre(`${urlListeFilms}?tri=${tri}&ordre=${orderBy}`);
-  }
-
-  function triActif(tri) {
-    setTri(tri);
   }
  
   const transition = { duration: 1.5, ease: 'easeInOut' };
@@ -58,7 +54,7 @@ function ListeFilms() {
           exit={{ opacity: 1, x: -25, transition }}
           className="filtre"
         >
-          <Filtre handleTri={triActif} handleFiltre={filtre}/>
+          <Filtre handleFiltre={filtre}/>
         </motion.div>
       {/* </div> */}
       {/* <div > */}

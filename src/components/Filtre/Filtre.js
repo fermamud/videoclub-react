@@ -1,23 +1,22 @@
-import './Filtre.css';
 import { useState } from 'react';
+import './Filtre.css';
 
 
 function Filtre(props) {
     const [activeItem, setActiveItem] = useState('inactif');
 
     function setParams(tri, orderBy) {
-        console.log('entrei na primeira');
         props.handleFiltre(tri, orderBy);
+        props.handleTri(tri);
     }
 
-    function maDeuxiemeFunction(tri) {
-        console.log('entrei na segunda');
-        setActiveItem(tri);
+    function maDeuxiemeFunction(filtreActif) {
+        setActiveItem(filtreActif);
     }
 
 
     return (
-        <ul className="liste-filtres">
+        <ul className="liste-filtres m-medium">
             <li className={activeItem === 'titreAsc' ? 'actif' : 'inactif'} onClick = {() => {setParams('titre', 'asc'); maDeuxiemeFunction('titreAsc')}}>Titre alphabétique (A-Z)</li>
             <li className={activeItem === 'titreDesc' ? 'actif' : 'inactif'} onClick = {() => {setParams('titre', 'desc'); maDeuxiemeFunction('titreDesc')}}>Titre alphabétique (Z-A)</li>
             <li className={activeItem === 'realisationAsc' ? 'actif' : 'inactif'} onClick = {() => {setParams('realisation', 'asc'); maDeuxiemeFunction('realisationAsc')}}>Réalisateur alphabétique (A-Z)</li>

@@ -19,12 +19,24 @@
   margin: var(--space-0_5);
 }
 
+.m-small {
+  margin: 1rem;
+}
+
 .mt-small {
   margin-top: var(--space-1);
 }
 
 .mb-small {
   margin-bottom: var(--space-1);
+}
+
+.m-medium {
+  margin: 1.5rem;
+}
+
+.m-normal {
+  margin: var(--space-2);
 }
 
 .mt-normal {
@@ -36,11 +48,19 @@
 }
 
 .p-xsmall {
-    padding: var(--space-0_5);
+  padding: var(--space-0_5);
 }
 
 .p-small {
   padding: var(--space-1);
+}
+
+.pt-normal {
+  padding-top: var(--space-2);
+}
+
+.pb-normal {
+  padding-bottom: var(--space-2);
 }
 
 /* padding: var(--space-2) 0 var(--space-2) 0; */

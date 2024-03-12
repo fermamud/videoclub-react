@@ -3,7 +3,7 @@ header {
       135deg,
       rgba(0, 121, 128, 0.739) 0%,
       rgba(253, 246, 233, 0.572) 30%,
-      rgba(0, 121, 128, 1) 100% /* #fdf6e9 */ /* #007a80 */
+      rgba(0, 121, 128, 1) 100%
     ),
     url("../../../public/img/banniere.jpg");
   background-size: cover;
@@ -23,8 +23,7 @@ header {
       margin: 0;
 
       & .active {
-        /* border-bottom: 3px solid var(--couleur-basique); */
-        border-bottom: 3px solid var(--couleur-neutre);
+        border-bottom: var(--space-0_2) solid var(--couleur-neutre);
       }
 
       & li {
@@ -38,7 +37,6 @@ header {
 
         & a {
           font-family: var(--police-titre);
-          /* color: var(--couleur-basique); */
           color: var(--couleur-neutre);
           text-decoration: none;
         }
@@ -50,17 +48,15 @@ header {
       flex-direction: column;
 
       & button {
-        /* border: var(--couleur-red) 2px solid; */
-        border: black 2px solid;
-        /* color: var(--couleur-red); */
-        color: black;
-        font-family: "Texte";
-        font-size: 1rem;
+        background-color: var(--couleur-verte);
+        border: var(--couleur-neutre) 2px solid;
+        color: var(--couleur-neutre);
+        font-family: var(--police-normal);
+        font-size: var(--police-texte-normal);
         font-weight: bolder;
-        height: 1.5rem;
-        margin-top: 0.5rem;
-        /* padding: 1rem; */
-        width: 7rem;
+        height: var(--space-1_5);
+        margin-top: var(--space-0_5);
+        width: var(--space-7);
       }
 
       & button:hover {
@@ -70,11 +66,10 @@ header {
       }
 
       & input {
-        background-color: white;
-        /* border: var(--couleur-red) 2px solid; */
-        border: black 2px solid;
-        height: 2rem;
-        padding: 0.2rem;
+        background-color: var(--couleur-neutre);
+        border: var(--couleur-noir) 2px solid;
+        height: var(--space-2);
+        padding: var(--space-0_2);
       }
     }
   }

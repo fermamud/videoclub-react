@@ -22,3 +22,23 @@
   src: url("../../../public/fonts/TenorSans-Regular.ttf");
 }
 /* APAGAR AS QUE NAO USO */
+:root {
+  --police-titre: "Titre";
+  --police-texte: "Texte";
+  --police-normal: "Normal";
+
+  --police-h1: 2rem;
+  --police-h2: max(1.5rem, 1.2vw);
+  --police-h3: 1.5rem;
+  --police-texte-large: 1.5rem;
+  /* --police-texte: 1.25rem; */
+  --police-texte-normal: 1rem;
+  --police-nav: max(2rem, 3vw);
+  --police-large: max(1.6rem, 3vw);
+  --police-medium: max(1.2rem, 2.5vw);
+  --police-parag-large: max(1.3rem, 1vw); 
+  --police-parag: max(1.2rem, 1.8vw);
+  --police-filtre: max(1.2rem, 1.2vw);
+  --police-parag-small: max(1rem, 1.2vw);
+  --police-small: max(0.8rem, 1vw);
+}

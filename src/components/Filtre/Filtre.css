@@ -1,1 +1,40 @@
+.filtre {
+  display: flex;
+  font-family: var(--police-texte);
+  font-size: var(--police-filtre);
+  font-weight: bolder;
 
+  & .liste-filtres {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: right;
+    padding: 0;
+    width: 100%;
+
+    li {
+      cursor: pointer;
+      list-style: none;
+      padding: var(--space-1);
+      width: var(--space-16);
+    }
+
+    & .actif {
+      border-bottom: var(--couleur-verte) var(--space-0_25) solid;
+    }
+
+    li:hover {
+      background-color: var(--couleur-red);
+      border: var(--couleur-bg-red) var(--space-0_25) solid;
+      color: var(--couleur-neutre);
+    }
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .filtre {
+    & .liste-filtres {
+      justify-content: center;
+    }
+  }
+}

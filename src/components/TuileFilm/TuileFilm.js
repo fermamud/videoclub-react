@@ -1,23 +1,22 @@
 import './TuileFilm.css';
 
 function TuileFilm(props) {
-  //console.log(props);
-  const url = props.filtre.urlFiltre;
-  const pointInt = url.indexOf('?');
-  const pointJointure = url.indexOf('&');
-  let tri = '';
-  if (pointInt !== -1 && pointJointure !== -1) {
-    tri = url.substring(pointInt + 5, pointJointure);
-    // console.log(tri);
-  }
+
+  // const url = props.filtre.urlFiltre;
+  // const pointInt = url.indexOf('?');
+  // const pointJointure = url.indexOf('&');
+  // let tri = '';
+  // if (pointInt !== -1 && pointJointure !== -1) {
+  //   tri = url.substring(pointInt + 5, pointJointure);
+  // }
 
   return (
-    <article className="container-image">
+    <article className="container-image m-small">
       <img className="image" src={`img/${props.data.titreVignette}`} alt={props.data.titre} />
-      <div className="info-film">
+      <div className="info-film mt-small">
         <h2>{props.data.titre}</h2>
-        {(tri === 'annee') ? <p>{props.data.annee}</p> : ''}
-        {(tri === 'realisation') ? <p>{props.data.realisation}</p> : ''}
+        {(props.tri === 'annee') ? <p className="m-xsmall">{props.data.annee}</p> : ''}
+        {(props.tri === 'realisation') ? <p className="m-xsmall">{props.data.realisation}</p> : ''}
       </div>
     </article>
   );

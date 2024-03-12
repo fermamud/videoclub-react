@@ -1,36 +1,30 @@
 :root {
   /* Couleurs */
-  /* --couleur-neutre: #d8dcde; */
   --couleur-basique: #ffffff;
+  --couleur-noir: #000000;
   --couleur-neutre: #fdf6e9;
   --couleur-red: #c73e3e;
   --couleur-verte: #007a80;
-
-  /* Typographies */
-  --police-titre: "Titre";
-  --police-texte: "Texte";
-
-  /* mudar os tamanhos */
-  --police-h1: 2rem;
-  --police-h2: 1.75rem;
-  --police-h3: 1.5rem;
-  --police-texte-large: 1.5rem;
-  --police-texte: 1.25rem;
-  --police-nav: max(2rem, 3vw);
+  
+  /* p(film) -> max(1rem, 1.2vw) */
 
   /* Espaces */
   --space-base: max(5px, 1vw);
   /* ver se o exemplo do simon eh melhor ou nao */
 
   --space-0_1: 0.1rem;
+  --space-0_2: 0.2rem;
   --space-0_25: 0.25rem;
   --space-0_5: 0.5rem;
   --space-2: 2rem;
   --space-1: 1rem;
+  --space-1_5: 1.5rem;
   --space-2_5: 2.5rem;
   --space-3_5: 3.5rem;
+  --space-7: 7rem;
+  --space-16: 16rem;
 
-  /* Largeur images */
+  /* Largeur */
   --width-xlarge: max(350px, 25vw);
   --width-large: max(22rem, 15vw);
   --width-medium: max(15rem, 22vw);
@@ -41,5 +35,6 @@
 
   /* Largeur blocs */
   --width-bloc-xlarge: max(350px, 40vw);
+  --width-bloc-medium: max(3rem, 5vw);
   --width-bloc-normal: max(1.5rem, 6vw);
 }
