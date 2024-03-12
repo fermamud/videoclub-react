@@ -36,6 +36,7 @@
   --police-nav: max(2rem, 3vw);
   --police-large: max(1.6rem, 3vw);
   --police-medium: max(1.2rem, 2.5vw);
+  --police-parag-xlarge: max(1.3rem, 2vw); 
   --police-parag-large: max(1.3rem, 1vw); 
   --police-parag: max(1.2rem, 1.8vw);
   --police-filtre: max(1.2rem, 1.2vw);

@@ -55,12 +55,20 @@
   padding: var(--space-1);
 }
 
+.p-normal {
+  padding: var(--space-2);
+}
+
 .pt-normal {
   padding-top: var(--space-2);
 }
 
 .pb-normal {
   padding-bottom: var(--space-2);
+}
+
+.pl-normal {
+  padding-left: var(--space-2);
 }
 
 /* padding: var(--space-2) 0 var(--space-2) 0; */
