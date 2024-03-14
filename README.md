@@ -23,3 +23,18 @@ Si vous êtes un utilisateur inscrit, vous pourrez également ajouter un comment
 Une page amusante apparaîtra sur votre écran si la route recherchée n'existe pas.
 Vous aurez également la possibilité de revenir au site.
 
+# TP2 - React (frontend)
+
+This project consists of a movie website, where only the frontend part has been worked on with various features. Everything is done through React and its libraries. Among its features, we have:
+
+## Home Page
+Page with elaborate images on Figma as well as the use of icons and animations.
+
+## Movie List Page
+Page presenting all the movies and also offering the option of filter selection. All page functionalities are animated, and effects are achieved through Framer Motion and CSS.
+
+## Movie Page
+This page will contain the details of each movie, such as the year, description, genre, and production. Additionally, this page will allow rating movies and reading comments about them. If you are a registered user, you can also add a comment about the movie. To log in, simply click on "login".
+
+## 404 Page
+A fun page will appear on your screen if the requested route does not exist. You will also have the option to return to the site.
