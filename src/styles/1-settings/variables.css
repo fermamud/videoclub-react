@@ -5,13 +5,8 @@
   --couleur-neutre: #fdf6e9;
   --couleur-red: #c73e3e;
   --couleur-verte: #007a80;
-  
-  /* p(film) -> max(1rem, 1.2vw) */
 
   /* Espaces */
-  --space-base: max(5px, 1vw);
-  /* ver se o exemplo do simon eh melhor ou nao */
-
   --space-0_1: 0.1rem;
   --space-0_2: 0.2rem;
   --space-0_25: 0.25rem;
@@ -23,8 +18,12 @@
   --space-2_5: 2.5rem;
   --space-3: 3rem;
   --space-3_5: 3.5rem;
+  --space-4_5: 4.5rem;
   --space-7: 7rem;
   --space-16: 16rem;
+  
+  /* Espace Base */
+  --space-base: var(--space-1);
 
   /* Largeur */
   --width-xlarge: max(350px, 25vw);

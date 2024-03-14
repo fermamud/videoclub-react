@@ -23,23 +23,32 @@ function App() {
       usager: localStorageUsager || ''
     };
   });
+  console.log(logging);
 
   function login(e) {
     e.preventDefault();
-   
+
+    console.log(e.target.usager.value);
     if (e.target.usager.value === 'admin') {
       localStorage.setItem('estLog', 'true');
       localStorage.setItem('usager', 'admin');    
-      setLogging(logging => ({ ...logging, estLog: true, usager: e.target.usager.value}));
+      setLogging({ estLog: true, usager: e.target.usager.value});
 
       e.target.reset();
     }
   }
 
+  function logout(e) {
+    e.preventDefault();
+
+    localStorage.clear();   
+    setLogging(logging => ({ ...logging, estLog: false, usager: ''}));
+  }
+
   return (
     <AppContext.Provider value={logging}>
       {/* <Router> */}
-        <Entete handleLogin={login} />
+        <Entete handleLogin={login} handleLogout={logout}/>
         <AnimatePresence mode="wait">
           <Routes location={location} key={location.key}>
             <Route path="/" className="active" element={<Accueil />} />

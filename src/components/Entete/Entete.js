@@ -4,7 +4,7 @@ import { AppContext } from '../App/App';
 import './Entete.css';
 
 function Entete(props) {
-  console.log(props);
+
   const context = useContext(AppContext);
   const location = useLocation();
 
@@ -21,8 +21,14 @@ function Entete(props) {
                     <NavLink to="/liste-films">Liste des Films</NavLink>
                 </li>
                 <li>
-                  {(context.estLog === 'true' || context.usager === 'admin') ? 
-                    <NavLink to="/admin">Admin</NavLink> : 
+                  {(context.estLog) ? 
+                    <div className="section-logged-in">
+                      <NavLink to="/admin">Bienvenue {context.usager}</NavLink>
+                      <form className="form-logout" onSubmit={props.handleLogout}>
+                        <button>Logout</button>
+                      </form>  
+                    </div>
+                    :
                     <form className="form-login" onSubmit={props.handleLogin}>
                       <input type='text' name="usager" placeholder="Login"></input>
                       <button>Login</button>

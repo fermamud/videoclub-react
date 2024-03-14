@@ -15,18 +15,33 @@
     li {
       cursor: pointer;
       list-style: none;
-      padding: var(--space-1);
+      padding: var(--space-1) var(--space-1) 0 var(--space-1);
       width: var(--space-16);
     }
 
-    & .actif {
-      border-bottom: var(--couleur-verte) var(--space-0_25) solid;
+    .cool-link {
+      display: inline-block;
+      text-decoration: none;
     }
 
-    li:hover {
-      background-color: var(--couleur-red);
-      border: var(--couleur-bg-red) var(--space-0_25) solid;
-      color: var(--couleur-neutre);
+    .cool-link::after {
+      content: "";
+      display: block;
+      width: 0;
+      height: 3px;
+      background: var(--couleur-noir);
+      transition: width 0.3s;
+    }
+
+    .cool-link:hover::after {
+      width: calc(1rem + 100%);
+    }
+
+    & .actif {
+      border-right: var(--couleur-noir) 4px solid;
+      border-top: var(--couleur-noir) 4px solid;
+      transition: 0.5s;
+      pointer-events: none;
     }
   }
 }

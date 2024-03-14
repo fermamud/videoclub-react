@@ -19,8 +19,7 @@ function ListeFilms() {
     fetch(urlFiltre)
       .then((reponse) => reponse.json())
       .then((data) => {
-        console.log('entrei aqui');
-        console.log(data);
+
         setListeFilms(data);
         setEstCharge(true);
       });
@@ -41,7 +40,7 @@ function ListeFilms() {
     setTri(tri);
   }
  
-  const transition = { duration: 1.5, ease: 'easeInOut' };
+  const transition = { duration: 1, ease: 'easeInOut' };
   const variant = {
     hidden: {opacity: 0, y: 25 },
     visible: { opacity: 1, y: 0, transition },
@@ -50,33 +49,29 @@ function ListeFilms() {
 
   return (
     <main>
-      {/* <div > */}
         <motion.div
-          key='filtre'
-          initial={{ opacity: 0, x: -25 }}
-          animate={{ opacity: 1, x: 0, transition }}
-          exit={{ opacity: 1, x: -25, transition }}
-          className="filtre"
+            key='filtre'
+            initial={{ opacity: 0, x: -25 }}
+            animate={{ opacity: 1, x: 0, transition }}
+            exit={{ opacity: 1, x: -25, transition }}
+            className="filtre"
         >
-          <Filtre handleTri={triActif} handleFiltre={filtre}/>
+            <Filtre handleTri={triActif} handleFiltre={filtre}/>
         </motion.div>
-      {/* </div> */}
-      {/* <div > */}
-      {estCharge ? 
-        <motion.div
-          // key='liste-film'
-          key={urlFiltre}
-          initial= 'hidden'
-          animate='visible'
-          exit='exit'
-          variants={variant}
-          className="container-imgs"
-        >
-          {tuilesFilm}
-        </motion.div>
-         : ( '' )}
-
-        {/* </div> */}
+        {estCharge ? 
+            <motion.div
+              // key='liste-film'
+              key={urlFiltre}
+              initial= 'hidden'
+              animate='visible'
+              exit='exit'
+              variants={variant}
+              className="container-imgs"
+            >
+              {tuilesFilm}
+            </motion.div>
+            : ( '' )
+        }
     </main>
   );
 }
