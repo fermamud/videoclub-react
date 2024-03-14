@@ -1,4 +1,4 @@
-# TP2 - React (frontend)
+# TP2 - React (frontend) - Version Français
 
 Ce travail consiste en un site de films, où seule la partie frontend a été travaillée avec diverses fonctionnalités. Tout est réalisé à travers React et ses bibliothèques.
 Parmi ses fonctionnalités, on retrouve :
@@ -23,7 +23,7 @@ Si vous êtes un utilisateur inscrit, vous pourrez également ajouter un comment
 Une page amusante apparaîtra sur votre écran si la route recherchée n'existe pas.
 Vous aurez également la possibilité de revenir au site.
 
-# TP2 - React (frontend)
+# TP2 - React (frontend) - English Version
 
 This project consists of a movie website, where only the frontend part has been worked on with various features. Everything is done through React and its libraries. Among its features, we have:
 
