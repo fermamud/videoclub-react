@@ -1,7 +1,6 @@
 import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import ListeFilms from './ListeFilms';
 import TuileFilm from '../TuileFilm/TuileFilm';
 
 
@@ -40,20 +39,6 @@ describe('Composant ListeFilms', () => {
      * À faire
      */
     test('Vérifie si les clés sont présentes dans la réponse', async () => {
-
-        // no nosso trabalho sera para todos dentro de um foreach
-
-        // const reponse = await fetch('https://demo-en-classe.onrender.com/api/films/8DEF7nB2b7pDIOnKeRrO');
-        // const data = await reponse.json();
-
-        // await waitFor(() => {
-        //     expect(data).toHaveProperty('titre');
-        //     expect(data).toHaveProperty('genres');
-        //     expect(data).toHaveProperty('realisation');
-        //     expect(data).toHaveProperty('description');
-        //     expect(data).toHaveProperty('annee');
-        //     expect(data).toHaveProperty('titreVignette');
-        // });
             
         const filmsReponse = await fetch('https://demo-en-classe.onrender.com/api/films');
         const films = await filmsReponse.json();

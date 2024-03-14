@@ -5,11 +5,13 @@ import './Filtre.css';
 function Filtre(props) {
     const [activeItem, setActiveItem] = useState('inactif');
 
+    // Gestion du tri e du order by
     function setParams(tri, orderBy) {
         props.handleFiltre(tri, orderBy);
         props.handleTri(tri);
     }
 
+    // Gestion du filtre actif
     function maDeuxiemeFunction(filtreActif) {
         setActiveItem(filtreActif);
     }

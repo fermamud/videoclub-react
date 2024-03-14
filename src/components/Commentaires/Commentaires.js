@@ -2,6 +2,7 @@ import './Commentaires.css';
 
 function Commentaires(props) {
 
+    // Gestion du commentaire suite au click
     function setCommentaire(e) {
         e.preventDefault();
         const commentaire = e.target.commentaire.value;

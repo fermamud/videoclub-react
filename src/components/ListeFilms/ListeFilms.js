@@ -6,31 +6,30 @@ import Filtre from '../Filtre/Filtre';
 import './ListeFilms.css';
 
 function ListeFilms() {
-  const urlListeFilms = 'https://demo-en-classe.onrender.com/api/films';
-  const [urlFiltre, setUrlFiltre] = useState([urlListeFilms]);
 
-  const [tri, setTri] = useState('');
-  
-  const [listeFilms, setListeFilms] = useState([]);
+    const urlListeFilms = 'https://demo-en-classe.onrender.com/api/films';
+    const [urlFiltre, setUrlFiltre] = useState([urlListeFilms]);
 
-  const [estCharge, setEstCharge] = useState(false);
+    const [tri, setTri] = useState('');
+    
+    const [listeFilms, setListeFilms] = useState([]);
 
-  useEffect(() => {
-    fetch(urlFiltre)
-      .then((reponse) => reponse.json())
-      .then((data) => {
+    const [estCharge, setEstCharge] = useState(false);
 
-        setListeFilms(data);
-        setEstCharge(true);
-      });
-  }, [urlFiltre]);
+    useEffect(() => {
+      fetch(urlFiltre)
+        .then((reponse) => reponse.json())
+        .then((data) => {
+          setListeFilms(data);
+          setEstCharge(true);
+        });
+    }, [urlFiltre]);
 
-  const tuilesFilm = listeFilms.map((film, index) => {
-    const filtreChoisi = {urlFiltre: urlFiltre};
-    return <Link key={index} data={film} to={`/film/${film.id}`}>
-              <TuileFilm key={index} tri={tri} filtre={filtreChoisi} data={film}/>
-            </Link>
-  });
+    const tuilesFilm = listeFilms.map((film, index) => {
+      return <Link key={index} data={film} to={`/film/${film.id}`}>
+                  <TuileFilm key={index} tri={tri} data={film}/>
+              </Link>
+    });
 
   function filtre(tri, orderBy) {
       setUrlFiltre(`${urlListeFilms}?tri=${tri}&ordre=${orderBy}`);
@@ -60,7 +59,6 @@ function ListeFilms() {
         </motion.div>
         {estCharge ? 
             <motion.div
-              // key='liste-film'
               key={urlFiltre}
               initial= 'hidden'
               animate='visible'

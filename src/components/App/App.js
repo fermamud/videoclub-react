@@ -15,6 +15,7 @@ function App() {
 
   const location = useLocation();
 
+  // Définition du logging en prenant également en compte le localStorage
   const [logging, setLogging] = useState(() => {
     const localStorageUsager = localStorage.getItem('usager');
     const localStorageLogin = localStorage.getItem('estLog');
@@ -23,24 +24,26 @@ function App() {
       usager: localStorageUsager || ''
     };
   });
-  console.log(logging);
 
+  // Gestion du login
   function login(e) {
     e.preventDefault();
 
-    console.log(e.target.usager.value);
     if (e.target.usager.value === 'admin') {
-      localStorage.setItem('estLog', 'true');
-      localStorage.setItem('usager', 'admin');    
-      setLogging({ estLog: true, usager: e.target.usager.value});
+        // Gestion do localStorage
+        localStorage.setItem('estLog', 'true');
+        localStorage.setItem('usager', 'admin');    
+        setLogging({ estLog: true, usager: e.target.usager.value});
 
-      e.target.reset();
+        e.target.reset();
     }
   }
 
+  // Gestion du logout
   function logout(e) {
     e.preventDefault();
 
+    // Nettoyage du localStorage
     localStorage.clear();   
     setLogging(logging => ({ ...logging, estLog: false, usager: ''}));
   }

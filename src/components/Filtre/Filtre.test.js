@@ -21,7 +21,6 @@ describe('Composant Filtres', () => {
         // });
 
         // Test unitaire réalisé en fonction du texte du li cliqué.
-
         const elParent = document.querySelector('.liste-filtres');
         const elsLi = elParent.querySelectorAll('li');
         elsLi.forEach(li => {

@@ -9,11 +9,12 @@ import './Film.css';
 function Film() {
 
     const context = useContext(AppContext);
-    // const utilizateur = localStorage.getItem('usager');
 
+    // Recuperer l'id du film
     const filmId = useParams();
     const urlFilm = `https://demo-en-classe.onrender.com/api/films/${filmId.id}`;
     
+    // Recuperer les infos du film
     const [infoFilm, setInfoFilm] = useState({});
     const [nbVotes, setNbVote] = useState('Aucun vote enregistré');
     const [average, setAverage] = useState(0); 
@@ -22,7 +23,6 @@ function Film() {
         fetch(urlFilm)
         .then((reponse) => reponse.json())
         .then((data) => {
-            console.log(data);
             setInfoFilm(data);
             if (data.notes) {
                 setNbVote(data.notes.length);
@@ -66,8 +66,10 @@ function Film() {
             .then((reponse) => reponse[1].json())
             .then((data) => {
                 setInfoFilm(data);
-                setNbVote(data.notes.length);
-                setMoyenne(data.notes, data.notes.length);
+                if (data.notes) {
+                    setNbVote(data.notes.length);
+                    setMoyenne(data.notes, data.notes.length);
+                }
             })
     }
 
@@ -108,6 +110,7 @@ function Film() {
                 </div>
     }); 
 
+    // Transition d'animation
     const transition = { duration: 1.5, ease: 'easeInOut' };
 
     return (
@@ -130,7 +133,6 @@ function Film() {
             </motion.div>
 
             <Note handleVote={nbVotes} handleAverage={average} handleNote={soumettreNote} />
-            {/* <Note handleNote={(note) => soumettreNote(note)} /> */}
             <div className="blocCommentaire mt-small mb-small">
                 {(context.estLog) ?
                     <Commentaires handleCommentaire={soumettreCommentaire} /> :

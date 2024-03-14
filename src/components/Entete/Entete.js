@@ -8,6 +8,7 @@ function Entete(props) {
   const context = useContext(AppContext);
   const location = useLocation();
 
+  // Si la page est l'accueil, le header sera modifié
   const estAccueil = location.pathname === "/" ? true : false; 
 
   return (
@@ -21,19 +22,19 @@ function Entete(props) {
                     <NavLink to="/liste-films">Liste des Films</NavLink>
                 </li>
                 <li>
-                  {(context.estLog) ? 
-                    <div className="section-logged-in">
-                      <NavLink to="/admin">Bienvenue {context.usager}</NavLink>
-                      <form className="form-logout" onSubmit={props.handleLogout}>
-                        <button>Logout</button>
-                      </form>  
-                    </div>
-                    :
-                    <form className="form-login" onSubmit={props.handleLogin}>
-                      <input type='text' name="usager" placeholder="Login"></input>
-                      <button>Login</button>
-                    </form>
-                  }
+                    {(context.estLog) ? 
+                        <div className="section-logged-in">
+                          <NavLink to="/admin">Bienvenue {context.usager}</NavLink>
+                          <form className="form-logout" onSubmit={props.handleLogout}>
+                              <button>Logout</button>
+                          </form>  
+                        </div>
+                        :
+                        <form className="form-login" onSubmit={props.handleLogin}>
+                            <input type='text' name="usager" placeholder="Login"></input>
+                            <button>Login</button>
+                        </form>
+                    }
                 </li>
             </ul>
         </nav>

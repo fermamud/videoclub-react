@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'; 
-import './Accueil.css';
 import data from './Accueil.json';
+import './Accueil.css';
 
 function Accueil() {
 
@@ -43,15 +43,14 @@ function Accueil() {
                         exit='exit'
                         variants={variantIcones}
                         className="all-film"
-                        >
-                            <img className="icone-cinema" src="icones/star.svg" alt="" />
-                            <img className="icone-cinema" src="icones/star.svg" alt="" />
-                            <img className="icone-cinema" src="icones/star.svg" alt="" />
-                            <img className="icone-cinema" src="icones/star.svg" alt="" />
-                            <img className="icone-cinema" src="icones/star.svg" alt="" />
-                        {/* </div> */}
+                    >
+                        <img className="icone-cinema" src="icones/star.svg" alt="" />
+                        <img className="icone-cinema" src="icones/star.svg" alt="" />
+                        <img className="icone-cinema" src="icones/star.svg" alt="" />
+                        <img className="icone-cinema" src="icones/star.svg" alt="" />
+                        <img className="icone-cinema" src="icones/star.svg" alt="" />
                     </motion.div>
-                    {dataAffichage[0]}
+                        {dataAffichage[0]}
                     <motion.div
                         key='accueil-icones-2'
                         initial= 'hidden'
@@ -59,7 +58,7 @@ function Accueil() {
                         exit='exit'
                         variants={variantIcones}
                         className="all-film"
-                        >
+                    >
                             <img className="icone-cinema" src="icones/star.svg" alt="" />
                             <img className="icone-cinema" src="icones/star.svg" alt="" />
                             <img className="icone-cinema" src="icones/star.svg" alt="" />
@@ -71,12 +70,12 @@ function Accueil() {
             <div className="container-image">
                 <div className="info-film">
                     <motion.div
-                    key='accueil-icones-3'
-                    initial= 'hidden'
-                    animate='visible'
-                    exit='exit'
-                    variants={variantIcones}
-                    className="all-film"
+                        key='accueil-icones-3'
+                        initial= 'hidden'
+                        animate='visible'
+                        exit='exit'
+                        variants={variantIcones}
+                        className="all-film"
                     >
                         <img className="icone-cinema" src="icones/film_strip.svg" alt="" />
                         <img className="icone-cinema" src="icones/film_strip.svg" alt="" />
@@ -86,12 +85,12 @@ function Accueil() {
                     </motion.div>
                         {dataAffichage[1]}
                     <motion.div
-                    key='accueil-icones-4'
-                    initial= 'hidden'
-                    animate='visible'
-                    exit='exit'
-                    variants={variantIcones}
-                    className="all-film"
+                        key='accueil-icones-4'
+                        initial= 'hidden'
+                        animate='visible'
+                        exit='exit'
+                        variants={variantIcones}
+                        className="all-film"
                     >
                         <img className="icone-cinema" src="icones/film_strip.svg" alt="" />
                         <img className="icone-cinema" src="icones/film_strip.svg" alt="" />
@@ -106,12 +105,12 @@ function Accueil() {
                 <img className="image" src="img/accueil_3.jpg" alt="" />
                 <div className="info-film">
                     <motion.div
-                    key='accueil-icones-5'
-                    initial= 'hidden'
-                    animate='visible'
-                    exit='exit'
-                    variants={variantIcones}
-                    className="all-film"
+                        key='accueil-icones-5'
+                        initial= 'hidden'
+                        animate='visible'
+                        exit='exit'
+                        variants={variantIcones}
+                        className="all-film"
                     >
                         <img className="icone-cinema" src="icones/popcorn.svg" alt="" />
                         <img className="icone-cinema" src="icones/popcorn.svg" alt="" />
@@ -119,14 +118,14 @@ function Accueil() {
                         <img className="icone-cinema" src="icones/popcorn.svg" alt="" />
                         <img className="icone-cinema" src="icones/popcorn.svg" alt="" />
                     </motion.div>  
-                    {dataAffichage[2]}
+                        {dataAffichage[2]}
                     <motion.div
-                    key='accueil-icones-6'
-                    initial= 'hidden'
-                    animate='visible'
-                    exit='exit'
-                    variants={variantIcones}
-                    className="all-film"
+                        key='accueil-icones-6'
+                        initial= 'hidden'
+                        animate='visible'
+                        exit='exit'
+                        variants={variantIcones}
+                        className="all-film"
                     >
                         <img className="icone-cinema" src="icones/popcorn.svg" alt="" />
                         <img className="icone-cinema" src="icones/popcorn.svg" alt="" />
