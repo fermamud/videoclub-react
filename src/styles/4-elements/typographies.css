@@ -1,9 +1,5 @@
 /* Typographie */
 
-/* @import url(fonts/IrishGrover-Regular.ttf);
-@import url(fonts/Lobster-Regular.ttf);
-@import url(fonts/RedHatDisplay-Regular.ttf); */
-
 /* Police titres */
 @font-face {
   font-family: "Titre";
@@ -21,7 +17,7 @@
   font-family: "Normal";
   src: url("../../../public/fonts/TenorSans-Regular.ttf");
 }
-/* APAGAR AS QUE NAO USO */
+
 :root {
   --police-titre: "Titre";
   --police-texte: "Texte";
@@ -31,15 +27,16 @@
   --police-h2: max(1.5rem, 1.2vw);
   --police-h3: 1.5rem;
   --police-texte-large: 1.5rem;
-  /* --police-texte: 1.25rem; */
   --police-texte-normal: 1rem;
   --police-nav: max(2rem, 3vw);
   --police-large: max(1.6rem, 3vw);
   --police-medium: max(1.2rem, 2.5vw);
+  --police-parag-xxlarge: max(1.5rem, 2vw); 
   --police-parag-xlarge: max(1.3rem, 2vw); 
   --police-parag-large: max(1.3rem, 1vw); 
   --police-parag: max(1.2rem, 1.8vw);
+  --police-parag-small: max(1rem, 1.4vw);
+  --police-parag-xsmall: max(1rem, 1.2vw);
   --police-filtre: max(1.2rem, 1.2vw);
-  --police-parag-small: max(1rem, 1.2vw);
   --police-small: max(0.8rem, 1vw);
 }

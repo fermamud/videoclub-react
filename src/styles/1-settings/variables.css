@@ -20,6 +20,7 @@
   --space-3_5: 3.5rem;
   --space-4_5: 4.5rem;
   --space-7: 7rem;
+  --space-10: 10rem;
   --space-16: 16rem;
   
   /* Espace Base */
@@ -27,9 +28,11 @@
 
   /* Largeur */
   --width-xlarge: max(350px, 25vw);
+  --width-mlarge: max(22rem, 35vw);
   --width-large: max(22rem, 15vw);
   --width-medium: max(15rem, 22vw);
   --width-normal: max(15rem, 20vw);
+  --width-small: max(4rem, 10vw);
 
   /* Largeur textes */
   --width-texte-normal: max(3rem, 5vw);
@@ -38,4 +41,9 @@
   --width-bloc-xlarge: max(350px, 40vw);
   --width-bloc-medium: max(3rem, 5vw);
   --width-bloc-normal: max(1.5rem, 6vw);
+
+  /* Largeur espacements petites */
+  --width-petit-normal: max(0.6rem, 1vw);
+  --width-petit-small: max(0.5rem, 1vw);
+  --width-petit-xsmall: max(0.4rem, 1vw);
 }

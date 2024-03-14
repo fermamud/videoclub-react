@@ -25,20 +25,24 @@ function ListeFilms() {
         });
     }, [urlFiltre]);
 
+    // Gestion d'affichage du film
     const tuilesFilm = listeFilms.map((film, index) => {
       return <Link key={index} data={film} to={`/film/${film.id}`}>
                   <TuileFilm key={index} tri={tri} data={film}/>
               </Link>
     });
 
+  // Gestion d'url avec filtre
   function filtre(tri, orderBy) {
       setUrlFiltre(`${urlListeFilms}?tri=${tri}&ordre=${orderBy}`);
   }
 
+  // Gestion du tri
   function triActif(tri) {
     setTri(tri);
   }
  
+  // Gestion animation
   const transition = { duration: 1, ease: 'easeInOut' };
   const variant = {
     hidden: {opacity: 0, y: 25 },

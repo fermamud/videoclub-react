@@ -6,7 +6,7 @@
     background-color: var(--couleur-verte);
     border-radius: var(--space-1) 0 var(--space-1) 0;
     color: var(--couleur-neutre);
-    font-family: "Titre";
+    font-family: var(--police-titre);
     font-size: var(--police-texte-large);
     width: 15rem;
   }
@@ -21,8 +21,7 @@
   & textarea {
     background-color: var(--couleur-neutre);
     border: 3px var(--couleur-verte) solid;
-    height: 10rem;
-    /* padding: 0.5rem; */
+    height: var(--space-10);
     width: var(--width-bloc-xlarge);
   }
 }

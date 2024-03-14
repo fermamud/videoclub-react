@@ -44,11 +44,11 @@ function Accueil() {
                         variants={variantIcones}
                         className="all-film"
                     >
-                        <img className="icone-cinema" src="icones/star.svg" alt="" />
-                        <img className="icone-cinema" src="icones/star.svg" alt="" />
-                        <img className="icone-cinema" src="icones/star.svg" alt="" />
-                        <img className="icone-cinema" src="icones/star.svg" alt="" />
-                        <img className="icone-cinema" src="icones/star.svg" alt="" />
+                        <img className="icone-cinema" src="icones/star.svg" alt="icone-star" />
+                        <img className="icone-cinema" src="icones/star.svg" alt="icone-star" />
+                        <img className="icone-cinema" src="icones/star.svg" alt="icone-star" />
+                        <img className="icone-cinema" src="icones/star.svg" alt="icone-star" />
+                        <img className="icone-cinema" src="icones/star.svg" alt="icone-star" />
                     </motion.div>
                         {dataAffichage[0]}
                     <motion.div
@@ -59,11 +59,11 @@ function Accueil() {
                         variants={variantIcones}
                         className="all-film"
                     >
-                            <img className="icone-cinema" src="icones/star.svg" alt="" />
-                            <img className="icone-cinema" src="icones/star.svg" alt="" />
-                            <img className="icone-cinema" src="icones/star.svg" alt="" />
-                            <img className="icone-cinema" src="icones/star.svg" alt="" />
-                            <img className="icone-cinema" src="icones/star.svg" alt="" />
+                        <img className="icone-cinema" src="icones/star.svg" alt="icone-star" />
+                        <img className="icone-cinema" src="icones/star.svg" alt="icone-star" />
+                        <img className="icone-cinema" src="icones/star.svg" alt="icone-star" />
+                        <img className="icone-cinema" src="icones/star.svg" alt="icone-star" />
+                        <img className="icone-cinema" src="icones/star.svg" alt="icone-star" />
                     </motion.div>
                 </div>
             </div>
@@ -77,11 +77,11 @@ function Accueil() {
                         variants={variantIcones}
                         className="all-film"
                     >
-                        <img className="icone-cinema" src="icones/film_strip.svg" alt="" />
-                        <img className="icone-cinema" src="icones/film_strip.svg" alt="" />
-                        <img className="icone-cinema" src="icones/film_strip.svg" alt="" />
-                        <img className="icone-cinema" src="icones/film_strip.svg" alt="" />
-                        <img className="icone-cinema" src="icones/film_strip.svg" alt="" />
+                        <img className="icone-cinema" src="icones/film_strip.svg" alt="icone-film" />
+                        <img className="icone-cinema" src="icones/film_strip.svg" alt="icone-film" />
+                        <img className="icone-cinema" src="icones/film_strip.svg" alt="icone-film" />
+                        <img className="icone-cinema" src="icones/film_strip.svg" alt="icone-film" />
+                        <img className="icone-cinema" src="icones/film_strip.svg" alt="icone-film" />
                     </motion.div>
                         {dataAffichage[1]}
                     <motion.div
@@ -92,11 +92,11 @@ function Accueil() {
                         variants={variantIcones}
                         className="all-film"
                     >
-                        <img className="icone-cinema" src="icones/film_strip.svg" alt="" />
-                        <img className="icone-cinema" src="icones/film_strip.svg" alt="" />
-                        <img className="icone-cinema" src="icones/film_strip.svg" alt="" />
-                        <img className="icone-cinema" src="icones/film_strip.svg" alt="" />
-                        <img className="icone-cinema" src="icones/film_strip.svg" alt="" />
+                        <img className="icone-cinema" src="icones/film_strip.svg" alt="icone-film" />
+                        <img className="icone-cinema" src="icones/film_strip.svg" alt="icone-film" />
+                        <img className="icone-cinema" src="icones/film_strip.svg" alt="icone-film" />
+                        <img className="icone-cinema" src="icones/film_strip.svg" alt="icone-film" />
+                        <img className="icone-cinema" src="icones/film_strip.svg" alt="icone-film" />
                     </motion.div>
                 </div>
                 <img className="image" src="img/accueil_1.jpg" alt="" />
@@ -112,11 +112,11 @@ function Accueil() {
                         variants={variantIcones}
                         className="all-film"
                     >
-                        <img className="icone-cinema" src="icones/popcorn.svg" alt="" />
-                        <img className="icone-cinema" src="icones/popcorn.svg" alt="" />
-                        <img className="icone-cinema" src="icones/popcorn.svg" alt="" />
-                        <img className="icone-cinema" src="icones/popcorn.svg" alt="" />
-                        <img className="icone-cinema" src="icones/popcorn.svg" alt="" />
+                        <img className="icone-cinema" src="icones/popcorn.svg" alt="icone-popcorn" />
+                        <img className="icone-cinema" src="icones/popcorn.svg" alt="icone-popcorn" />
+                        <img className="icone-cinema" src="icones/popcorn.svg" alt="icone-popcorn" />
+                        <img className="icone-cinema" src="icones/popcorn.svg" alt="icone-popcorn" />
+                        <img className="icone-cinema" src="icones/popcorn.svg" alt="icone-popcorn" />
                     </motion.div>  
                         {dataAffichage[2]}
                     <motion.div
@@ -127,11 +127,11 @@ function Accueil() {
                         variants={variantIcones}
                         className="all-film"
                     >
-                        <img className="icone-cinema" src="icones/popcorn.svg" alt="" />
-                        <img className="icone-cinema" src="icones/popcorn.svg" alt="" />
-                        <img className="icone-cinema" src="icones/popcorn.svg" alt="" />
-                        <img className="icone-cinema" src="icones/popcorn.svg" alt="" />
-                        <img className="icone-cinema" src="icones/popcorn.svg" alt="" />
+                        <img className="icone-cinema" src="icones/popcorn.svg" alt="icone-popcorn" />
+                        <img className="icone-cinema" src="icones/popcorn.svg" alt="icone-popcorn" />
+                        <img className="icone-cinema" src="icones/popcorn.svg" alt="icone-popcorn" />
+                        <img className="icone-cinema" src="icones/popcorn.svg" alt="icone-popcorn" />
+                        <img className="icone-cinema" src="icones/popcorn.svg" alt="icone-popcorn" />
                     </motion.div>
                 </div>
             </div>

@@ -13,8 +13,8 @@
     justify-content: space-evenly;
 
     & img {
-      margin: max(0.6rem, 1vw);
-      width: max(22rem, 35vw);
+      margin: var(--width-petit-normal);
+      width: var(--width-mlarge);
     }
 
     & .info-film {
@@ -22,13 +22,13 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      margin: max(0.6rem, 1vw);
-      width: max(22rem, 35vw);
+      margin: var(--width-petit-normall);
+      width: var(--width-mlarge);
 
       & p {
-        color: #c73e3e;
-        font-family: "Titre";
-        font-size: max(1.5rem, 2vw);
+        color: var(--couleur-red);
+        font-family: var(--police-titre);
+        font-size: var(--police-parag-xxlarge);
         letter-spacing: var(--space-0_1);
       }
 

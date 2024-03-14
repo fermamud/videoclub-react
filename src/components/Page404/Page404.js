@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 
 function Page404() {
 
+    // Gestion d'affichage GIF (element externe)
     useEffect(() => {
         const script = document.createElement('script');
         script.src = 'https://tenor.com/embed.js';

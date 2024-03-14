@@ -70,7 +70,6 @@ header {
           width: var(--space-4_5);
         }
       }
-      /* flex-direction: column; */
     }
 
     & button {
