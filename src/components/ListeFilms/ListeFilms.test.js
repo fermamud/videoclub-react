@@ -33,8 +33,6 @@ describe('Composant ListeFilms', () => {
 
     });
 
-
-
     /**
      * À faire
      */

@@ -8,7 +8,8 @@ function TuileFilm(props) {
       <div className="info-film mt-small">
         <h2>{props.data.titre}</h2>
         {(props.tri === 'annee') ? <p className="m-xsmall">{props.data.annee}</p> : ''}
-        {(props.tri === 'realisation') ? <p className="m-xsmall">{props.data.realisation}</p> : ''}
+        {(props.tri
+           === 'realisation') ? <p className="m-xsmall">{props.data.realisation}</p> : ''}
       </div>
     </article>
   );
